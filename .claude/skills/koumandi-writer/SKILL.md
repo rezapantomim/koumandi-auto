@@ -56,7 +56,7 @@ Fix and review again (max 2 rounds). Write `critic`. HARD failure or score < 7.5
 ## 4. Validate, queue, push
 - Save drafts to `work/episodes/<id>.json` (UTF-8). `python tools/validate.py work/episodes/*.json`; fix every FAIL.
 - `python tools/enqueue.py work/episodes/*.json`.
-- `git add queue data config/lexicon_fa.json && git commit -m "queue: <dates>" && git push` (on rejection: `git pull --rebase`, push again).
+- `git add queue data && git add config/lexicon_fa.json && git commit -m "queue: <dates>" && git push` (on rejection: `git pull --rebase`, push again).
 - Never commit `work/` or `.env`.
 - Then start the publisher at once so a video due today is built in time: `gh workflow run publish.yml -f dry_run=false`.
 

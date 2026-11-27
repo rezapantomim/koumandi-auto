@@ -7,14 +7,14 @@
       "Bash(git add queue data*)",
       "Bash(git commit*)",
       "Bash(git push*)",
+      "Bash(gh workflow run publish.yml*)",
       "WebSearch",
       "WebFetch",
       "Read",
       "Write(work/**)",
       "Edit(work/**)",
       "Edit(data/topics.json)",
-      "Edit(data/quiz.json)",
-      "Edit(data/gym_ideas.json)"
+      "Edit(config/lexicon_fa.json)"
     ],
     "deny": [
       "Read(.env)",
