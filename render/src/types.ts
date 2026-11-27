@@ -4,7 +4,7 @@ export type Style = {
 };
 
 export type Visual = {
-  type: 'stock' | 'keyword' | 'title' | 'list' | 'stat' | 'compare' | 'diagram' | 'exercise_card' | 'quote' | 'image' | 'collage';
+  type: 'stock' | 'keyword' | 'title' | 'list' | 'stat' | 'compare' | 'diagram' | 'exercise_card' | 'quote' | 'image' | 'collage' | 'short_clip';
   text?: string; highlight?: string; items?: string[]; value?: string; label?: string;
   left?: string; right?: string; verdict?: 'left' | 'right' | 'both' | 'none';
   name?: string; params?: Record<string, any>; muscles?: string[]; cues?: string[]; overlay?: string;

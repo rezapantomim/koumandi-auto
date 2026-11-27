@@ -115,7 +115,7 @@ def fetch_clips(ep, timeline):
                 download(s['tg_file_id'], raw)
             c = {'start': s.get('start', 0)}
             vf = (f'split[a][b];[a]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},boxblur=30:3,eq=brightness=-0.12[bg];'
-                  f'[b]scale=-2:{H}[fg];[bg][fg]overlay=(W-w)/2:0,fps=30,setsar=1') if not vertical else \
+                  f'[b]scale=-2:{int(H * 0.9)}[fg];[bg][fg]overlay=140:(H-h)/2,fps=30,setsar=1') if not vertical else \
                  f'scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps=30,setsar=1'
         elif v['type'] == 'stock' and v.get('clip'):
             c = v['clip']

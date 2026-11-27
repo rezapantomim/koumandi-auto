@@ -27,14 +27,18 @@ const Captions: React.FC<{ beat: Beat; p: Props; vertical: boolean }> = ({ beat,
   const start = Math.floor(idx / size) * size;
   const chunk = beat.words.slice(start, start + size);
   if (!chunk.length) return null;
+  // own Short shown as a panel on the left (it carries its own burned-in text) -> our subtitle sits on the right, never on top
+  const side = !vertical && beat.visual?.type === 'short_clip';
   return (
-    <div style={{
+    <div style={side ? {
+      position: 'absolute', left: 820, right: 70, top: 0, bottom: 0, display: 'flex', alignItems: 'center', justifyContent: 'center',
+    } : {
       position: 'absolute', left: 0, right: 0, top: vertical ? 1240 : undefined, bottom: vertical ? undefined : 70,
       display: 'flex', justifyContent: 'center', padding: '0 60px',
     }}>
       <div style={{
         background: vertical ? 'transparent' : '#000000aa', padding: vertical ? 0 : '14px 28px', borderRadius: 14,
-        fontFamily: vertical ? HEAD : BODY, fontWeight: 800, fontSize: vertical ? 78 : 46, lineHeight: 1.15, textAlign: 'center',
+        fontFamily: vertical ? HEAD : BODY, fontWeight: 800, fontSize: vertical ? 78 : side ? 58 : 46, lineHeight: 1.3, textAlign: 'center',
         color: p.style.text, textShadow: vertical ? '0 6px 18px #000, 0 0 4px #000' : 'none', maxWidth: vertical ? 960 : 1500,
       }}>
         {chunk.map((w, i) => {
