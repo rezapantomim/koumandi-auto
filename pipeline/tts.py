@@ -153,43 +153,106 @@ def _eleven(text, mp3):
     return words
 
 
+def _chunks(says, max_words):
+    """Consecutive beat groups of at most max_words words (one Gemini request each)."""
+    out, cur, n = [], [], 0
+    for i, s in enumerate(says):
+        w = len(s.split())
+        if cur and n + w > max_words:
+            out.append(cur); cur, n = [], 0
+        cur.append(i); n += w
+    return out + ([cur] if cur else [])
+
+
+def _trim(a):
+    nz = np.where(np.abs(a) > 0.01)[0]
+    return a[max(0, nz[0] - int(0.04 * SR)): nz[-1] + int(0.08 * SR)] if len(nz) else a
+
+
+def split_at_pauses(audio, texts):
+    """Cut one chunk of speech into len(texts) beats: expected cut = character share of each beat, snapped to the best
+    nearby pause (long pauses preferred). Returns a list of trimmed arrays."""
+    n = len(texts)
+    if n == 1:
+        return [_trim(audio)]
+    hop = int(0.02 * SR)
+    rms = np.sqrt(np.convolve(audio ** 2, np.ones(hop) / hop, mode='same'))[::hop]
+    thr = max(0.012, np.percentile(rms, 20) * 2.5)
+    quiet = rms < thr
+    pauses, start = [], None                              # (mid seconds, length seconds)
+    for k, q in enumerate(np.append(quiet, False)):
+        if q and start is None:
+            start = k
+        elif not q and start is not None:
+            ln = (k - start) * 0.02
+            if ln >= 0.12:
+                pauses.append(((start + k) / 2 * 0.02, ln))
+            start = None
+    total = len(audio) / SR
+    w = np.array([max(1, len(t.replace(' ', ''))) for t in texts], dtype=float)
+    exp = w / w.sum() * total                             # expected beat lengths (character share)
+    P = [(m, ln) for m, ln in pauses if 0.3 < m < total - 0.3]
+    m = len(P)
+    if m < n - 1:                                         # not enough pauses: plain proportional cuts
+        cuts = list(np.cumsum(exp)[:-1])
+    else:
+        # global choice of n-1 pauses: minimise sum of squared relative length errors, longer pauses preferred
+        pos = [0.0] + [p[0] for p in P]; INF = 1e18
+        cost = lambda k, a, b: ((b - a - exp[k]) / exp[k]) ** 2
+        D = np.full((n, m + 1), INF); B = np.zeros((n, m + 1), dtype=int)
+        for j in range(1, m + 1):                         # first cut at pause j
+            D[0][j] = cost(0, 0.0, pos[j]) - 0.3 * P[j - 1][1]
+        for k in range(1, n - 1):
+            for j in range(k + 1, m + 1):
+                best, arg = INF, 0
+                for i in range(k, j):
+                    if D[k - 1][i] < INF:
+                        v = D[k - 1][i] + cost(k, pos[i], pos[j])
+                        if v < best:
+                            best, arg = v, i
+                D[k][j] = best - 0.3 * P[j - 1][1]; B[k][j] = arg
+        last = min(range(n - 1, m + 1), key=lambda j: D[n - 2][j] + cost(n - 1, pos[j], total))
+        idx = [last]
+        for k in range(n - 2, 0, -1):
+            idx.append(B[k][idx[-1]])
+        cuts = [pos[j] for j in reversed(idx)]
+    bounds = [0.0] + list(cuts) + [total]
+    return [_trim(audio[int(bounds[k] * SR): int(bounds[k + 1] * SR)]) for k in range(n)]
+
+
 def _gemini_all(says, seg, out_dir):
-    """Voice every beat with Gemini, then let Gemini listen back in blocks of ~12 beats. Beats holding a mispronounced word are
-    re-voiced (max `retries` rounds); still wrong -> the episode fails (never publish a wrong pronunciation)."""
+    """Voice the episode in a few large Gemini requests (free tier: ~10 requests/day per model), let Gemini listen back to
+    each chunk, re-voice a chunk with a mispronounced word (max `retries`), still wrong -> the episode fails. Returns the
+    per-beat audio arrays (cut at pauses)."""
     from . import gemini_tts as g
     gc = CFG['voice']['gemini']
-    wav = lambda i: seg / f'{i:03d}.wav'
-    for i, s in enumerate(says):
-        if not wav(i).exists():
-            g.speak(s, wav(i))
-    block = int(gc.get('check_block_beats', 12)); report = []
-    for start in range(0, len(says), block):
-        idx = list(range(start, min(start + block, len(says))))
-        for rnd in range(int(gc.get('retries', 2)) + 1):
-            joined = out_dir / f'check_{start:03d}.wav'
-            sf.write(joined, np.concatenate([_load(wav(i))[0] for i in idx]), SR, subtype='PCM_16')
+    arrays = [None] * len(says); report = []
+    for c, idx in enumerate(_chunks(says, int(gc.get('chunk_words', 260)))):
+        text = '\n'.join(says[i] for i in idx)
+        wav = seg / f'chunk_{c:02d}.wav'
+        for rnd in range(int(gc.get('retries', 1)) + 1):
+            if rnd or not wav.exists():
+                g.speak(text, wav)
             res = None
             for m in [gc.get('check_model')] + gc.get('check_fallback_models', []):
                 try:
-                    res = g.check(joined, ' '.join(says[i] for i in idx), model=m); break
+                    res = g.check(wav, text, model=m); break
                 except Exception as e:
                     print('check model failed', m, str(e)[:150], file=sys.stderr)
             if res is None:
                 raise RuntimeError('pronunciation check unavailable (all check models failed)')
             issues = res.get('issues') or []
+            print(f'chunk {c} round {rnd}: {len(idx)} beats, issues {issues}', file=sys.stderr)
             if not issues:
                 break
-            bad = {i for i in idx for x in issues if strip_marks(x.get('word', '')) and
-                   strip_marks(x['word']) in strip_marks(says[i]).split()} or set(idx)
-            print(f'pronunciation round {rnd}: {issues} -> re-voice beats {sorted(bad)}', file=sys.stderr)
-            if rnd == int(gc.get('retries', 2)):
+            if rnd == int(gc.get('retries', 1)):
                 report += issues
-                break
-            for i in bad:
-                g.speak(says[i], wav(i))
+        audio, _ = _load(wav)
+        for i, part in zip(idx, split_at_pauses(audio, [says[i] for i in idx])):
+            arrays[i] = part
     if report:
         raise RuntimeError('pronunciation still wrong after retries: ' + json.dumps(report, ensure_ascii=False)[:600])
-    return wav
+    return arrays
 
 
 def voice(ep, out_dir):
@@ -207,7 +270,7 @@ def voice(ep, out_dir):
         shown = strip_marks(b['text'])
         words = None
         if engine == 'gemini':                            # no word timings from Gemini -> captions split evenly per beat
-            a, lead = _load(gwav(i))
+            a, lead = gwav[i], 0.0
         if engine == 'elevenlabs':                       # no silent fallback to another voice: a failure stops this episode
             mp3 = seg / f'{i:03d}.mp3'
             words = _eleven(say, mp3)

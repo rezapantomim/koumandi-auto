@@ -85,9 +85,14 @@
         "gemini-3.8-flash",
         "gemini-2.5-flash"
       ],
-      "check_block_beats": 12,
-      "retries": 2,
-      "_note": "Owner picked Puck (2026-11-27). Gemini guesses homographs wrong without diacritics (read عِلم as عَلَم); with diacritics OK. Every episode is listened back by check_model; beats with wrong words are re-voiced, still wrong -> not published."
+      "retries": 1,
+      "_note": "Owner picked Puck (2026-11-27). Gemini guesses homographs wrong without diacritics (read عِلم as عَلَم); with diacritics OK. Every episode is listened back by check_model; beats with wrong words are re-voiced, still wrong -> not published.",
+      "chunk_words": 260,
+      "fallback_models": [
+        "gemini-3.1-flash-tts-preview",
+        "gemini-3.8-flash-lite-tts"
+      ],
+      "_quota_note": "Free tier: 10 requests/day PER MODEL (owner key, 2026-11-27). A long video uses ~3 TTS + ~3 check requests."
     }
   },
   "audio": {

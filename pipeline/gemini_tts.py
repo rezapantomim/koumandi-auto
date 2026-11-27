@@ -10,6 +10,10 @@ import numpy as np, requests, soundfile as sf
 API = 'https://generativelanguage.googleapis.com/v1beta/models'
 
 
+class QuotaError(RuntimeError):
+    pass
+
+
 def _key():
     k = os.environ.get('GEMINI_API_KEY')
     if not k:
@@ -31,6 +35,8 @@ def _cfg():
 def _post(model, body, tries=4):
     for i in range(tries):
         r = requests.post(f'{API}/{model}:generateContent', headers={'x-goog-api-key': _key()}, json=body, timeout=300)
+        if r.status_code == 429 and 'PerDay' in r.text:
+            raise QuotaError(f'Gemini {model}: daily free quota used up')
         if r.status_code in (429, 500, 503) and i < tries - 1:
             wait = 20 * (i + 1); print(f'gemini {r.status_code}, retry in {wait}s', file=sys.stderr); time.sleep(wait); continue
         if r.status_code >= 400:
@@ -47,8 +53,21 @@ def speak(text, wav, voice=None, model=None, style=None):
     body = {'contents': [{'parts': [{'text': prompt}]}],
             'generationConfig': {'responseModalities': ['AUDIO'],
                                  'speechConfig': {'voiceConfig': {'prebuiltVoiceConfig': {'voiceName': voice}}}}}
-    j = _post(model, body)
-    part = j['candidates'][0]['content']['parts'][0]['inlineData']
+    models = [model] if model != g.get('model', 'gemini-3.8-flash-tts') else [model] + g.get('fallback_models', [])
+    part, why = None, []
+    for k, m in enumerate(models):                     # each TTS model has its own free daily quota and its own filter
+        try:
+            j = _post(m, body)
+        except QuotaError:
+            why.append(f'{m}: daily quota'); print(f'{m}: daily quota used', file=sys.stderr); continue
+        c = (j.get('candidates') or [{}])[0]
+        parts = (c.get('content') or {}).get('parts') or []
+        if parts and 'inlineData' in parts[0]:
+            part = parts[0]['inlineData']; break
+        why.append(f'{m}: no audio ({c.get("finishReason")})')   # e.g. SAFETY false positive -> next model
+        print(why[-1], file=sys.stderr)
+    if part is None:
+        raise RuntimeError('Gemini TTS failed on every model: ' + '; '.join(why))
     pcm = np.frombuffer(base64.b64decode(part['data']), dtype='<i2')
     rate = int(part.get('mimeType', 'rate=24000').split('rate=')[-1].split(';')[0]) if 'rate=' in part.get('mimeType', '') else 24000
     sf.write(str(wav), pcm, rate, subtype='PCM_16')
