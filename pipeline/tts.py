@@ -258,7 +258,7 @@ def _gemini_all(says, seg, out_dir):
 def voice(ep, out_dir):
     out_dir = pathlib.Path(out_dir); seg = out_dir / 'tts'; seg.mkdir(parents=True, exist_ok=True)
     vc = {**CFG['voice']['edge'], **(ep.get('voice') or {})}
-    engine = CFG['voice']['engine']
+    engine = os.environ.get('KOUMANDI_VOICE_ENGINE') or CFG['voice']['engine']   # local previews: KOUMANDI_VOICE_ENGINE=edge
     if engine == 'elevenlabs':
         need, left = el_budget_check(ep); print(f'ElevenLabs: {need} chars for this episode, {left} left')
     chunks, timeline, t = [], [], 0.0
