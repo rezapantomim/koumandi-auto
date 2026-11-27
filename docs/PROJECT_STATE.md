@@ -19,12 +19,19 @@
 - Shorts source = Telegram (Instagram needs Business account + Meta app). Long = narrated educational, topics from Shorts.
 - made_for_kids = false (general audience), owner decision 2026-11-27.
 
-## Next (owner)
-- Voice picked: Gemini Puck (2026-11-27).
-- GitHub repo, Google Cloud project on the channel's account (YouTube Data API v3, OAuth app In production, Desktop client)
-  → `python tools/yt_auth.py` → secret YT_TOKEN_JSON; Telegram bot admin in the Koumandi channel → secrets
-  TELEGRAM_BOT_TOKEN / TELEGRAM_SOURCE_CHAT / TELEGRAM_CHAT_ID; PIXABAY_API_KEY.
-- Then: `scripts/install-schedule.ps1`, first writer run, a dry run on Actions, first real upload.
+## Live (2026-11-27)
+- Google Cloud project `koumandi-youtube` (separate from the app's own `koumandi` project, which holds the app's Supabase
+  Google sign-in - do not touch its OAuth): YouTube Data API v3, OAuth app "KOUMANDI Uploader" In production, Desktop client
+  `koumandi-uploader`; home/privacy on GitHub Pages (main /docs). Token verified for @koumandiapp.
+- Repo github.com/rezapantomim/koumandi-auto (public). Secrets: TELEGRAM_BOT_TOKEN, TELEGRAM_SOURCE_CHAT (-1004409679328, private
+  inbox channel KOUMANDI.APP, bot @KOUMANDIBOT admin), GEMINI_API_KEY, PIXABAY_API_KEY, YT_TOKEN_JSON. TELEGRAM_CHAT_ID not set
+  (owner never pressed Start) -> no Telegram reports yet.
+- First Shorts published by Actions: TG-144 youtu.be/rb_qw_wn4wQ, TG-115 youtu.be/dznWn9pqHjg (public, covers set).
+- Inbox: owner posts cover + caption + video in any order; 10 videos > 20 MB marked too_big (owner re-sends compressed).
+
+## Next
+- Long videos: queue empty. Register the writer (`scripts/install-schedule.ps1`) and do a first writer run; first slot 2026-11-28 19:00 Tehran.
+- Verify the first scheduled (cron) run of Publish.
 
 ## Open issues
 - Custom thumbnails need a phone-verified channel; for Shorts the API thumbnail does not show in the Shorts feed.
