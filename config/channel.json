@@ -26,7 +26,7 @@
     "short_max_per_day": 1,
     "plan_days_ahead": 4,
     "build_ahead_hours": 40,
-    "max_uploads_per_day": 4,
+    "max_uploads_per_day": 5,
     "paused": false,
     "long_days": [
       "SAT",
@@ -35,7 +35,8 @@
       "FRI"
     ],
     "short_days_ahead": 2,
-    "_note": "Owner 2026-11-27: one Short every day at 17:00 Tehran (uploaded ahead, YouTube publishAt), long videos Sat/Mon/Wed/Fri. Long time 19:00 (owner may change)."
+    "_note": "Owner 2026-11-27: one Short every day at 17:00 Tehran (uploaded ahead, YouTube publishAt), long videos Sat/Mon/Wed/Fri. Long time 19:00 (owner may change).",
+    "_cap_note": "YouTube API quota 10,000 units/day, one upload = 1,600 -> 6 uploads max; 5 leaves room for thumbnails/playlists."
   },
   "long_video": {
     "width": 1920,
