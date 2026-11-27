@@ -1,4 +1,4 @@
-"""Plan the next long-video slots (one every schedule.long_every_days days, from schedule.long_first_date).
+"""Plan the next long-video slots (schedule.long_days, e.g. SAT/MON/WED/FRI, at schedule.long_time_local).
 
 Usage: python tools/plan_week.py [--days N] [--write]
 Prints JSON: the empty long slots in the next N days (default schedule.plan_days_ahead), the todo topics, and the
@@ -33,16 +33,17 @@ def main():
     a = ap.parse_args()
     sc = CFG['schedule']; tz = ZoneInfo(sc['timezone'])
     now = dt.datetime.now(tz)
-    first = dt.date.fromisoformat(sc['long_first_date']); every = int(sc['long_every_days'])
+    DAYS = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
     days = a.days or int(sc.get('plan_days_ahead', 7))
-    end = now.date() + dt.timedelta(days=days)
     used = taken_days()
-    slots, day = [], first
-    while day <= end:
+    slots = []
+    for d in range(days + 1):
+        day = now.date() + dt.timedelta(days=d)
+        if DAYS[day.weekday()] not in sc['long_days']:
+            continue
         publish = dt.datetime.combine(day, dt.time(*map(int, sc['long_time_local'].split(':'))), tzinfo=tz)
         if publish > now + dt.timedelta(hours=3) and day.strftime('%Y%m%d') not in used:
             slots.append({'slot': 'L-' + day.strftime('%Y%m%d'), 'publish_at': utc(day, sc['long_time_local'], tz)})
-        day += dt.timedelta(days=every)
     topics = [t for t in load('data/topics.json', []) if t['status'] == 'todo']
     shorts = [{'id': e['id'], 'title': e.get('title'), 'caption': e.get('caption', ''), 'video_id': e.get('video_id'),
                'tg_file_id': e.get('tg_file_id'), 'seconds': e.get('seconds')}

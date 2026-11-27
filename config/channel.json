@@ -21,15 +21,21 @@
   },
   "schedule": {
     "timezone": "Asia/Tehran",
-    "long_every_days": 2,
-    "long_first_date": "2026-11-28",
     "long_time_local": "19:00",
     "short_time_local": "17:00",
-    "short_max_per_day": 2,
-    "plan_days_ahead": 7,
+    "short_max_per_day": 1,
+    "plan_days_ahead": 4,
     "build_ahead_hours": 40,
     "max_uploads_per_day": 4,
-    "paused": false
+    "paused": false,
+    "long_days": [
+      "SAT",
+      "MON",
+      "WED",
+      "FRI"
+    ],
+    "short_days_ahead": 2,
+    "_note": "Owner 2026-11-27: one Short every day at 17:00 Tehran (uploaded ahead, YouTube publishAt), long videos Sat/Mon/Wed/Fri. Long time 19:00 (owner may change)."
   },
   "long_video": {
     "width": 1920,

@@ -1,6 +1,6 @@
 ---
 name: koumandi-writer
-description: Write the next KOUMANDI long YouTube videos (Persian, one every other day) end to end — pick topics from the published Shorts, research, script with correct Persian pronunciation (diacritics in `say`), storyboard with checked visuals and our own Short clips, critic pass, validate, queue and push to GitHub. Use when the scheduled writer run starts, or when the user asks to write/plan/queue KOUMANDI long videos.
+description: Write the next KOUMANDI long YouTube videos (Persian, Sat/Mon/Wed/Fri) end to end — pick topics from the published Shorts, research, script with correct Persian pronunciation (diacritics in `say`), storyboard with checked visuals and our own Short clips, critic pass, validate, queue and push to GitHub. Use when the scheduled writer run starts, or when the user asks to write/plan/queue KOUMANDI long videos.
 ---
 
 # KOUMANDI — long-video writer
@@ -58,6 +58,7 @@ Fix and review again (max 2 rounds). Write `critic`. HARD failure or score < 7.5
 - `python tools/enqueue.py work/episodes/*.json`.
 - `git add queue data config/lexicon_fa.json && git commit -m "queue: <dates>" && git push` (on rejection: `git pull --rebase`, push again).
 - Never commit `work/` or `.env`.
+- Then start the publisher at once so a video due today is built in time: `gh workflow run publish.yml -f dry_run=false`.
 
 ## 5. Report (Persian, short)
 Each queued video (id, publish time Tehran, title, critic score), skipped ones and why, warnings. The scheduled runner sends it

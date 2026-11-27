@@ -171,17 +171,33 @@ def package(item):
     return title, desc, list(dict.fromkeys(tags))[:20]
 
 
+def short_slots(hist, now=None):
+    """Free daily Short slots (schedule.short_time_local, Tehran) from today up to short_days_ahead days, oldest first.
+    A slot counts as taken when history has a Short with that `slot`. Today's slot only if it is still > 20 min away."""
+    from zoneinfo import ZoneInfo
+    sc = CFG['schedule']; tz = ZoneInfo(sc['timezone'])
+    now = now or dt.datetime.now(dt.timezone.utc)
+    h, m = map(int, sc['short_time_local'].split(':'))
+    taken = {e.get('slot') for e in hist['episodes'] if e.get('kind') == 'short'}
+    out = []
+    for d in range(int(sc.get('short_days_ahead', 2)) + 1):
+        day = (now.astimezone(tz) + dt.timedelta(days=d)).date()
+        at = dt.datetime.combine(day, dt.time(h, m), tzinfo=tz).astimezone(dt.timezone.utc)
+        if at > now + dt.timedelta(minutes=20) and day.isoformat() not in taken:
+            out.append((day.isoformat(), at))
+    return out[:int(sc.get('short_days_ahead', 2))]
+
+
 def publish_due(yt, hist, left, dry=False):
-    """Upload up to short_max_per_day new inbox videos (oldest first). Returns report lines."""
+    """Fill the free daily Short slots with the oldest ready inbox videos: uploaded now as private with YouTube's publishAt
+    = the slot time (exactly 17:00 Tehran), so GitHub's cron delays never matter. Returns report lines."""
     from . import youtube
     inbox = load(INBOX, {'items': []}); out = []
-    today = dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%d')
-    done_today = sum(1 for e in hist['episodes'] if e.get('kind') == 'short' and (e.get('uploaded_at') or '').startswith(today))
-    room = min(left, CFG['schedule']['short_max_per_day'] - done_today)
+    slots = short_slots(hist)
     now_ts = dt.datetime.now(dt.timezone.utc).timestamp()
     ready = lambda x: x['status'] == 'new' or (x['status'] == 'wait' and now_ts - x.get('got', x['date']) > WAIT_HOURS * 3600)
     for i in sorted((x for x in inbox['items'] if ready(x)), key=lambda x: x['date']):
-        if room <= 0:
+        if not slots or left <= 0:
             break
         sid = f'TG-{i["msg"]}'
         if i.get('size', 0) > MAX_BOT_DOWNLOAD:
@@ -197,7 +213,8 @@ def publish_due(yt, hist, left, dry=False):
             title, desc, tags = package(i)
             if dry:
                 out.append(f'🧪 {sid}: {title} ({secs:.0f}s) - not uploaded'); continue
-            ep = {'id': sid, 'kind': 'short', 'publish_at': dt.datetime.now(dt.timezone.utc).isoformat()}
+            slot_day, slot_at = slots[0]
+            ep = {'id': sid, 'kind': 'short', 'publish_at': slot_at.strftime('%Y-%m-%dT%H:%M:%SZ')}
             vid = youtube.upload(yt, mp4, ep, title + ' #Shorts', desc, tags)
             thumb = youtube.set_thumb(yt, vid, cover) if cover else None
             try:
@@ -207,9 +224,10 @@ def publish_due(yt, hist, left, dry=False):
             i['status'] = 'done'; i['video_id'] = vid
             hist['episodes'].append({'id': sid, 'kind': 'short', 'title': title, 'caption': i.get('caption', ''), 'video_id': vid,
                                      'tg_file_id': i['file_id'], 'seconds': round(secs, 1), 'thumb': thumb,
+                                     'slot': slot_day, 'publish_at': ep['publish_at'],
                                      'uploaded_at': dt.datetime.now(dt.timezone.utc).isoformat(timespec='seconds')})
-            room -= 1
-            out.append(f'✅ شورت {sid} -> https://youtu.be/{vid}')
+            slots.pop(0); left -= 1
+            out.append(f'✅ شورت {sid} -> https://youtu.be/{vid} (انتشار {slot_day} ساعت {CFG["schedule"]["short_time_local"]})')
         except Exception as e:
             out.append(f'❌ {sid}: {str(e)[:300]}')
     save(INBOX, inbox)
