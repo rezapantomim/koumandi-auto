@@ -29,6 +29,15 @@
 - First Shorts published by Actions: TG-144 youtu.be/rb_qw_wn4wQ, TG-115 youtu.be/dznWn9pqHjg (public, covers set).
 - Inbox: owner posts cover + caption + video in any order; 10 videos > 20 MB marked too_big (owner re-sends compressed).
 
+## Long videos (2026-11-27)
+- Schedule: Short daily 17:00 Tehran (YouTube publishAt), long Sat/Mon/Wed/Fri 19:00. Writer: Task Scheduler 'KOUMANDI Writer'
+  daily 09:00 (needs .claude/settings.json copied from docs/claude-settings.example.json by the owner).
+- Gemini free tier = 10 TTS requests/day PER MODEL -> voicing in 2-3 chunks (~260 words), split at pauses (DP), per-chunk check
+  (gemini-3.5-flash), model chain 3.8-flash-tts -> 3.1-flash-tts-preview -> 3.8-flash-lite-tts on quota or SAFETY
+  (3.1-preview falsely blocked a harmless chunk). YouTube API quota resets 08:00 UTC; daily cap 5 uploads, longs before Shorts.
+- First long L-20261128-deep-sea-lights (not_before 08:10Z) -> built by the 12:43Z run on 28 Nov, publish 19:00. Local preview OK (6:08).
+- Known: own-Short clips carry their burned-in captions under ours (double text).
+
 ## Next
 - Long videos: queue empty. Register the writer (`scripts/install-schedule.ps1`) and do a first writer run; first slot 2026-11-28 19:00 Tehran.
 - Verify the first scheduled (cron) run of Publish.
