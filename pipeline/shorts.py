@@ -30,22 +30,28 @@ def _src_ok(chat):
     return bool(want) and (str(chat.get('id')) == want or (chat.get('username') or '').lower() == want)
 
 
+def _owner_ok(chat):
+    """Private chat of the owner with the bot (TELEGRAM_CHAT_ID): old channel posts forwarded there count as Shorts too."""
+    own = os.environ.get('TELEGRAM_CHAT_ID') or ''
+    return bool(own) and chat.get('type') == 'private' and str(chat.get('id')) == own
+
+
 def poll():
-    """Read new channel posts into the inbox. Returns number of new videos."""
+    """Read new channel posts (and videos the owner forwards to the bot) into the inbox. Returns number of new videos."""
     tok = _tok()
     if not tok or not os.environ.get('TELEGRAM_SOURCE_CHAT'):
         print('shorts: TELEGRAM_BOT_TOKEN / TELEGRAM_SOURCE_CHAT not set -> skip'); return 0
     st = load(STATE, {'offset': 0}); inbox = load(INBOX, {'items': []})
     known = {(i['chat'], i['msg']) for i in inbox['items']}
     r = requests.get(f'{API}/bot{tok}/getUpdates', params={'offset': st['offset'], 'timeout': 0,
-                     'allowed_updates': '["channel_post","edited_channel_post"]'}, timeout=30).json()
+                     'allowed_updates': '["channel_post","edited_channel_post","message"]'}, timeout=30).json()
     if not r.get('ok'):
         raise RuntimeError(f'telegram getUpdates: {r}')
     photos, new = {}, 0
     for u in r['result']:
         st['offset'] = u['update_id'] + 1
-        p = u.get('channel_post') or u.get('edited_channel_post')
-        if not p or not _src_ok(p['chat']):
+        p = u.get('channel_post') or u.get('edited_channel_post') or u.get('message')
+        if not p or not (_src_ok(p['chat']) or _owner_ok(p['chat'])):
             continue
         if p.get('photo'):                               # possible cover: same album or reply to a video
             best = p['photo'][-1]['file_id']
@@ -63,10 +69,13 @@ def poll():
                 if (i['chat'], i['msg']) == key and i['status'] == 'new':
                     i['caption'] = cap
             continue
-        inbox['items'].append({'chat': p['chat']['id'], 'msg': p['message_id'], 'date': p['date'], 'file_id': v['file_id'],
+        orig = p.get('forward_origin') or {}
+        date = orig.get('date') or p.get('forward_date') or p['date']      # forwarded backlog keeps the original order
+        vcover = (v.get('cover') or [None])[-1]                              # Telegram's own video cover, if set
+        inbox['items'].append({'chat': p['chat']['id'], 'msg': p['message_id'], 'date': date, 'file_id': v['file_id'],
                                'size': v.get('file_size', 0), 'width': v.get('width'), 'height': v.get('height'),
                                'seconds': v.get('duration'), 'caption': cap, 'group': p.get('media_group_id'),
-                               'cover': None, 'status': 'skip' if any(t in cap for t in SKIP_TAGS) else 'new'})
+                               'cover': vcover['file_id'] if vcover else None, 'status': 'skip' if any(t in cap for t in SKIP_TAGS) else 'new'})
         known.add(key); new += 1
     for i in inbox['items']:                             # attach covers found in this batch
         c = photos.get(i.get('group')) or photos.get(('reply', i['msg']))
