@@ -16,6 +16,9 @@ on:
       file:
         description: 'Optional: build this one file only, never uploads (e.g. tests/S-20261204-protein-30g.json)'
         required: false
+      voice_engine:
+        description: 'Optional: override the voice engine for a test build (edge = free, no Gemini quota)'
+        required: false
 
 permissions:
   contents: write
@@ -59,6 +62,7 @@ jobs:
           TELEGRAM_SOURCE_CHAT: ${{ secrets.TELEGRAM_SOURCE_CHAT }}
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          KOUMANDI_VOICE_ENGINE: ${{ github.event_name == 'workflow_dispatch' && inputs.voice_engine || '' }}
         run: |
           ARGS=""
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="--dry-run"; fi

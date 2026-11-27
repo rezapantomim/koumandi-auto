@@ -79,7 +79,7 @@
     "gemini": {
       "model": "gemini-3.8-flash-tts",
       "voice": "Puck",
-      "style": "Read the following Persian (Farsi) text aloud in standard Tehrani Persian, as a warm, clear and lively storyteller for children. The text carries diacritics (fatha, kasra, damma) on ambiguous words: they are authoritative - pronounce those words exactly as marked.",
+      "style": "Read the following Persian (Farsi) text aloud in natural, everyday spoken Tehrani Persian, like a friendly, energetic YouTuber talking to one viewer: relaxed and conversational, never formal, bookish or newsreader-like. Smile in the voice, let questions sound like real questions, build a little suspense on teasers, keep a lively but unhurried pace. The text carries diacritics (fatha, kasra, damma) on special words: they are authoritative - pronounce those words exactly as marked.",
       "check_model": "gemini-3.5-flash",
       "check_fallback_models": [
         "gemini-3.8-flash",
