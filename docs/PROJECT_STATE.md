@@ -49,3 +49,5 @@
 - 2026-11-27 owner rules for long videos: no own Shorts (short_clip banned), >=50% image/collage, >=1/3 collage, text cards <=15%,
   conversational Tehrani tone, `rehook` beat every <=220 words, diacritics on special words. Enforced in tools/validate.py.
   L-20261128 rewritten under these rules (775 words, 57 beats, critic 8.6).
+- 2026-11-27 owner loved the L-20261128 visuals/edit (keep this style); disliked edge voice. Puck style prompt now conversational.
+  Actions test build (voice_engine=edge) OK 5:18. Local renders: Remotion headless shell exe vanished (antivirus?) -> set REMOTION_BROWSER to installed chrome.exe.
