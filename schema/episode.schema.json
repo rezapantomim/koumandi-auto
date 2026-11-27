@@ -234,6 +234,10 @@
     "type": "string"
    },
    "description": "TG-<msg> ids of the Shorts this long video builds on"
+  },
+  "not_before": {
+   "type": "string",
+   "description": "optional UTC time before which the publisher must not build/upload this episode"
   }
  },
  "$defs": {

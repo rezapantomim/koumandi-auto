@@ -24,6 +24,9 @@ def due(only=None, file=None):
         if only and ep['id'] != only:
             continue
         at = dt.datetime.fromisoformat(ep['publish_at'].replace('Z', '+00:00'))
+        nb = ep.get('not_before')                       # optional: do not build before this UTC time (e.g. API quota reset)
+        if nb and not only and now() < dt.datetime.fromisoformat(nb.replace('Z', '+00:00')):
+            continue
         if only or at <= now() + dt.timedelta(hours=CFG['schedule']['build_ahead_hours']):
             eps.append((at, f, ep))
     return [(f, ep) for _, f, ep in sorted(eps, key=lambda x: x[0])]
