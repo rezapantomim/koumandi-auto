@@ -1,6 +1,6 @@
 ---
 name: koumandi-writer
-description: Write the next KOUMANDI long YouTube videos (Persian, Sat/Mon/Wed/Fri) end to end — pick topics from the published Shorts, research, script with correct Persian pronunciation (diacritics in `say`), storyboard with checked visuals and our own Short clips, critic pass, validate, queue and push to GitHub. Use when the scheduled writer run starts, or when the user asks to write/plan/queue KOUMANDI long videos.
+description: Write the next KOUMANDI long YouTube videos (Persian, Sat/Mon/Wed/Fri) end to end — pick topics from the published Shorts, research, script with correct Persian pronunciation (diacritics in `say`), storyboard with many checked collages/pictures (never our own Short videos), conversational tone with re-hooks, critic pass, validate, queue and push to GitHub. Use when the scheduled writer run starts, or when the user asks to write/plan/queue KOUMANDI long videos.
 ---
 
 # KOUMANDI — long-video writer
@@ -32,18 +32,22 @@ fallback themes in config/rules.md. Never repeat a title in data/topics.json or 
 ## 2. For each long video
 1. **Research.** Verify every fact with web search in reliable sources (encyclopaedias, NASA, National Geographic, museums,
    universities, Persian sources like دانشنامه‌ها). Note 2–5 sources with URLs.
-2. **Script** (Persian, 650–950 words, 5–9 scenes, structure from config/rules.md). Each beat = one spoken idea (≈ 3–6 s):
-   `text` (on screen, no diacritics) and `say` (same words + diacritics on every ambiguous word). Read each `say` aloud in your
+2. **Script** (Persian, 650–950 words, 5–9 scenes, structure from config/rules.md). Write it like a friendly YouTuber TALKING
+   (محاوره‌ی خودمونی، «تو»), never bookish. Open loop in the first 10 s, paid off near the end; a re-hook beat
+   (`"rehook": true`) at least every ~150–200 words (teaser, twist, question to the viewer). Each beat = one spoken idea (≈ 3–6 s):
+   `text` (on screen, no diacritics) and `say` (same words + diacritics on every special word: homographs, rare/scientific
+   words, names, foreign words, numbers, ezafe the voice could miss). Read each `say` aloud in your
    head the way a machine would; mark every homograph and the ezafe where needed. Fill `pronunciation_checked`.
    New names → add to `config/lexicon_fa.json`.
 3. **Storyboard.** A `visual` for every beat:
-   - Our own Shorts: `{"type": "short_clip", "short": {"id": "TG-…", "tg_file_id": "…", "start": s, "end": e}}` — only Shorts
-     listed in the plan; pick moments that match the sentence (you know them from the caption; keep them short, 3–8 s).
+   - NEVER our own Short videos (`short_clip` is forbidden in long videos; Shorts only inspire the topic).
+   - Pictures first: ≥ 50% of beats `image`/`collage`, ≥ 33% `collage` (2–4 pictures that tell the moment together);
+     text cards ≤ 15% (the validator enforces this).
    - Stock video: `python tools/stock_search.py "<precise English query>" --orientation landscape`, **open the contact sheet
      and look at it**; pick only if it clearly shows what the sentence says; copy `provider`, `id`, `url`, `checked`.
    - Pictures: `python tools/image_search.py "<query>" --source pixabay --kind photo|illustration|vector` (or `--source wikimedia`),
      open the sheet, never a NO PREVIEW candidate; copy provider, id, url, license, credit, page, `checked`.
-   - Text cards: `title`, `keyword`, `list`, `stat`, `compare`, `quote` (Persian).
+   - Text cards (few!): `title`, `keyword`, `list`, `stat`, `compare`, `quote` (Persian).
    - A change every beat; never 3 identical non-video types in a row.
 4. **Thumbnail:** `thumb_text` (2–4 Persian words, curiosity), `thumb_highlight` (one word of it).
 5. **Upload package** per config/rules.md; `playlist`: `long`.

@@ -3,24 +3,26 @@
  "kind": "long",
  "topic_id": "T01",
  "publish_at": "2026-11-28T15:30:00Z",
+ "not_before": "2026-11-28T08:10:00Z",
  "playlist": "long",
- "thumb_text": "ماهی‌هایی که چراغ دارند",
+ "thumb_text": "ته دریا چراغ داره!",
  "thumb_highlight": "چراغ",
  "upload": {
-  "title": "چراغ‌های زنده‌ی اعماق دریا: ماهی‌ها چطور نور می‌سازند؟",
-  "description": "هزار متر زیر دریا هیچ نوری از خورشید نمی‌رسد، اما آنجا پر از چراغ است! با کوروش، میا و ایمان به اعماق اقیانوس سفر کن و ببین جانوران چطور خودشان نور می‌سازند و با آن شکار می‌کنند، پنهان می‌شوند، هم‌نوعشان را پیدا می‌کنند و فرار می‌کنند.\n\n{CHAPTERS}\n\nمنابع:\nNOAA Ocean Exploration: https://oceanexplorer.noaa.gov/facts/bioluminescence.html\nNOAA Ocean Service: https://oceanservice.noaa.gov/facts/light_travel.html\nSmithsonian Ocean: https://ocean.si.edu/ocean-life/fish/bioluminescence\nMartini & Haddock 2017, Scientific Reports: https://www.nature.com/articles/srep45750\n\n#کومندی #اعماق_دریا #دانستنی",
+  "title": "چرا ته دریا پر از چراغه؟ ماهی‌هایی که خودشون نور می‌سازن",
+  "description": "می‌دونستی هزار متر زیر دریا هیچ نوری از خورشید نمی‌رسه، ولی اونجا پر از چراغه؟ با کوروش، میا و ایمان سوار زیردریایی شو و ببین جونورای اعماق چطوری خودشون نور می‌سازن و باهاش شکار می‌کنن، قایم می‌شن، همدیگه رو پیدا می‌کنن و فرار می‌کنن. آخرشم می‌فهمی کدوم ماهی یه چراغ‌قوه‌ی مخفی داره!\n\n{CHAPTERS}\n\nمنابع:\nNOAA Ocean Exploration: https://oceanexplorer.noaa.gov/facts/bioluminescence.html\nNOAA Ocean Service: https://oceanservice.noaa.gov/facts/light_travel.html\nSmithsonian Ocean: https://ocean.si.edu/ocean-life/fish/bioluminescence\nMartini & Haddock 2017, Scientific Reports: https://www.nature.com/articles/srep45750\n\n#کومندی #اعماق_دریا #دانستنی",
   "tags": [
    "کومندی",
    "اعماق دریا",
    "زیست‌تابی",
    "ماهی ماهیگیر",
    "ماهی فانوسی",
+   "ماهی اژدها",
    "جانوران دریایی",
    "اقیانوس",
    "دانستنی",
-   "علم برای همه",
    "نور زنده",
    "کرم شب‌تاب",
+   "زیردریایی",
    "بازی آموزشی",
    "کوروش میا ایمان",
    "deep sea",
@@ -33,7 +35,7 @@
    "#اعماق_دریا",
    "#دانستنی"
   ],
-  "pinned_comment": "جواب معما را درست حدس زدی؟ 🐞 اگر می‌توانستی یک چراغ زنده داشته باشی، با آن چه کار می‌کردی؟ 👇"
+  "pinned_comment": "معما رو درست حدس زدی؟ 🐞 اگه یه چراغ زنده داشتی، باهاش چی‌کار می‌کردی؟ جوابتو اینجا بنویس 👇"
  },
  "sources": [
   {
@@ -56,41 +58,111 @@
  "from_shorts": [
   "TG-147"
  ],
+ "pronunciation_checked": [
+  "کِرم = worm (کِرمِ شَب‌تاب، کِرم نیست), not کَرَم",
+  "مادّه = substance vs مادِه = female (مادِه‌هاش، anglerfish)",
+  "مَوادّ = substances",
+  "پُر = full, not پَر",
+  "دَر واقِع (in fact), not دُر",
+  "دَرد / دَردی (به درد خوردن), not دُرد",
+  "گُم = lost",
+  "سَر in سَرِش (head), not سِر",
+  "شَبه = it is night, not شِبه",
+  "سَرده = it is cold, not سُرده",
+  "غِیب (vanish), غِیر (other than)",
+  "دُوُّم / سِوُّم / چَهارُم / اَوَّل = ordinals",
+  "دَه / دَه‌ها = ten, not ده (village)",
+  "یِک (one) in the summary",
+  "رَوِش = method, not روش (on it)",
+  "تُند (bright/strong) light",
+  "آخِرِ ویدیو (end), not آخَر",
+  "قِرمِز، شِکَم، خُشکی، مَحو، نامَرئی، مُلایِم، تَبَری، اِژدَها، مَرموز",
+  "foreign/scientific: لوسیفِرین، لوسیفِراز، اُکسیژِن، باکتِری، اُقیانوس، کامِنت، اَپ کومَندی (lexicon)",
+  "colloquial verbs marked where a TTS could misread: می‌شَن، می‌رَن، می‌سازَن، می‌کُنَن، نِمی‌رِسه، نِمی‌بینه، بِبینَن، می‌گَم",
+  "ezafe kasra marked: رویِ زمین، نورِ خورشید، خودِ جونورا، ماهیِ نورانی، چَشمِ خودِشون، اَعماقِ دَریا، نورِ آبی، طَبَقه‌یِ گُرگ‌ومیش، ماهیِ ماهیگیرِ اَعماق، ماهیِ تَبَری، شِنِلِ نامَرئی، ماهیِ اِژدَها، کِرمِ شَب‌تاب، سوسکِ کوچولو، ابرِ نورانی، چِراغ‌قوه‌یِ مَخفی",
+  "tanwin: تَقریباً، بَعداً، واقِعاً، اَصلاً (on screen without tanwin)"
+ ],
  "scenes": [
   {
-   "title": "چراغ‌هایی در تاریکی",
+   "title": "یه دنیای تاریک پر از چراغ",
    "layer": "hook",
    "beats": [
     {
-     "text": "تصور کن در جایی هستی که هیچ‌وقت آفتاب نمی‌تابد؛ نه صبح دارد، نه ظهر، نه غروب.",
-     "say": "تَصَوُّر کُن دَر جایی هَستی که هیچ‌وَقت آفتاب نِمی‌تابَد؛ نه صُبح دارَد، نه ظُهر، نه غُروب.",
+     "text": "می‌دونستی یه جایی روی زمین هست که هیچ‌وقت آفتاب نمی‌بینه؟",
+     "say": "می‌دونِستی یه جایی رویِ زمین هست که هیچ‌وقت آفتاب نِمی‌بینه؟",
      "visual": {
       "type": "stock",
       "clip": {
        "provider": "pixabay",
        "id": "334192",
        "url": "https://cdn.pixabay.com/video/2026/02/12/334192_small.mp4",
-       "checked": "a single pale jellyfish floating in pitch-black water with tiny particles: a place without sunlight"
+       "checked": "a single pale jellyfish floating in pitch-black water: a place without sunlight"
       }
      },
      "sfx": "riser"
     },
     {
-     "text": "اما همین تاریکی مطلق پر از چراغ‌های کوچکی است که روشن و خاموش می‌شوند.",
-     "say": "اَمّا هَمین تاریکیِ مُطلَق پُر اَز چِراغ‌های کوچَکی است که روشَن و خاموش می‌شَوَند.",
+     "text": "نه صبح داره، نه ظهر، نه غروب. فقط تاریکی!",
+     "say": "نه صُبح داره، نه ظُهر، نه غُروب. فقط تاریکی!",
      "visual": {
-      "type": "short_clip",
-      "short": {
-       "id": "TG-147",
-       "tg_file_id": "BAACAgQAAyEFAAMBBtZd4AADk2sJaGaukrHW2Zh15A2BX1Z03s7HAAK7IwACYE9JULQgE8d7tM27PQQ",
-       "start": 0,
-       "end": 6
-      }
+      "type": "collage",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "18719",
+        "url": "https://pixabay.com/get/g1eb1ccd39e4ee4f3937e1c12e2897d491e4b0b614add1ed3d57890f23c0d67854a84b97962422ce73931ea063ada1450_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/animal-asia-blue-dark-deep-depth-18719/",
+        "checked": "faint light from far above fading into deep blue darkness"
+       },
+       {
+        "provider": "pixabay",
+        "id": "10393839",
+        "url": "https://pixabay.com/get/gb8cdf1a15e32850e7e36892f50898b8de77d1d636fb82974a1c816158d75c09bc2ddb4f1b5cd2e624131ad4f9f6d25c07259497b16b37dda6dfd8811944b7245_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/sea-ocean-fish-diving-coral-reef-10393839/",
+        "checked": "school of fish fading into black water near the bottom"
+       }
+      ]
      }
     },
     {
-     "text": "این چراغ‌ها را نه انسان ساخته و نه برق روشنشان کرده؛ خود جانوران آن‌ها را می‌سازند.",
-     "say": "این چِراغ‌ها را نه اِنسان ساخته و نه بَرق روشَنِشان کَرده؛ خودِ جانِوَران آن‌ها را می‌سازَند.",
+     "text": "ولی فکرشو بکن: همین تاریکی پر از چراغای کوچیکیه که روشن و خاموش می‌شن!",
+     "say": "ولی فِکرشو بِکُن: همین تاریکی پُر از چِراغایِ کوچیکیه که روشَن و خاموش می‌شَن!",
+     "visual": {
+      "type": "collage",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "2883",
+        "url": "https://pixabay.com/get/g4d4d1fb59c3092e7063d20762b146bc5396538418c79f29af6c05f458ef5562846689f6c1fcd7e8c71fad577a0283650_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/jellyfish-animal-underwater-2883/",
+        "checked": "bright blue glowing jellyfish on black"
+       },
+       {
+        "provider": "pixabay",
+        "id": "8562474",
+        "url": "https://pixabay.com/get/g6781192283b8af6b3b39f2b66a5c17217dc570f88fdc9352e234156d2991de47e49514893458dffedcaa9d5b6dfbab008089dece270fe916206ed32d820e525b_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/octopus-glow-bioluminescence-8562474/",
+        "checked": "glowing blue see-through octopus-like animal on black"
+       },
+       {
+        "provider": "pixabay",
+        "id": "6222849",
+        "url": "https://pixabay.com/get/g6115a80ffba839d0da5ffa4524e6f6500726c6129ff4c33a87330fcc911b145da8427e3ed851e4be516dc346483ff07740a25138a7215a2d0033e0176d3a47dd_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/jellyfish-tentacles-animal-6222849/",
+        "checked": "jellyfish lit blue and white in the dark"
+       }
+      ]
+     },
+     "sfx": "reveal"
+    },
+    {
+     "text": "این چراغا رو نه آدما ساختن، نه برق روشنشون کرده. خود جونورا می‌سازنشون!",
+     "say": "این چِراغا رو نه آدَما ساختَن، نه بَرق روشَنِشون کَرده. خودِ جونِورا می‌سازَنِشون!",
      "visual": {
       "type": "stock",
       "clip": {
@@ -102,14 +174,41 @@
      }
     },
     {
-     "text": "امروز می‌خواهیم بفهمیم جانوران اعماق دریا چطور نور می‌سازند و با آن چه کار می‌کنند.",
-     "say": "اِمروز می‌خواهیم بِفَهمیم جانِوَرانِ اَعماقِ دَریا چِطور نور می‌سازَند و با آن چه کار می‌کُنَند.",
+     "text": "یه ماهی اون پایین یه چراغ‌قوه‌ی مخفی داره؛ نوری که بقیه‌ی جونورا تقریبا نمی‌بیننش. آخر ویدیو می‌گم کدوم ماهیه!",
+     "say": "یه ماهی اون پایین یه چِراغ‌قوه‌یِ مَخفی داره؛ نوری که بَقیه‌یِ جونِورا تَقریباً نِمی‌بینَنِش. آخِرِ ویدیو می‌گَم کُدوم ماهیه!",
+     "visual": {
+      "type": "collage",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "2180474",
+        "url": "https://pixabay.com/get/g2d9f8a060df320eae1a909282d318d46cd127ed53cdb983e020323adccac8ca625d3e594806dc8d33b1061dd7e966ea5a75548f612803617e77e331fcbe7d418_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/night-shot-starry-sky-night-sky-2180474/",
+        "checked": "silhouette of a person pointing a flashlight beam into a dark blue night sky",
+        "caption": "؟"
+       },
+       {
+        "provider": "pixabay",
+        "id": "10495576",
+        "url": "https://pixabay.com/get/g0b52698a402162060350cc83af5526f0354a66e02f46dc24141a60fd8a7a99078083bb709473f6ed40d1dfb2e6594fc6b869f921039fef0f80dbfbb595f2ee60_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/nautilus-shell-spiral-deep-sea-10495576/",
+        "checked": "a lone creature in dark deep water with tiny particles"
+       }
+      ]
+     },
+     "rehook": true,
+     "sfx": "tick"
+    },
+    {
+     "text": "امروز با کوروش، میا و ایمان می‌ریم ببینیم این جونورا چطوری نور می‌سازن.",
+     "say": "امروز با کوروش، میا و ایمان می‌ریم بِبینیم این جونِورا چِطوری نور می‌سازَن.",
      "visual": {
       "type": "title",
-      "text": "چراغ‌های اعماق دریا",
-      "highlight": "چراغ"
-     },
-     "sfx": "whoosh"
+      "text": "چراغ‌های زنده‌ی اعماق دریا",
+      "highlight": "چراغ‌های زنده"
+     }
     }
    ]
   },
@@ -118,8 +217,8 @@
    "layer": "story",
    "beats": [
     {
-     "text": "کوروش، میا و ایمان سوار یک زیردریایی کوچک شده‌اند و آرام‌آرام به زیر آب می‌روند.",
-     "say": "کوروش، میا و ایمان سَوارِ یک زیردَریاییِ کوچَک شُده‌اَند و آرام‌آرام بِه زیرِ آب می‌رَوَند.",
+     "text": "کوروش، میا و ایمان سوار یه زیردریایی کوچیک شدن و آروم‌آروم می‌رن پایین.",
+     "say": "کوروش، میا و ایمان سَوارِ یه زیردَریاییِ کوچیک شُدَن و آروم‌آروم می‌رَن پایین.",
      "visual": {
       "type": "stock",
       "clip": {
@@ -132,8 +231,34 @@
      "sfx": "whoosh"
     },
     {
-     "text": "اول همه‌چیز آبی و روشن است؛ پرتوهای خورشید مثل نوارهای طلایی در آب می‌رقصند.",
-     "say": "اَوَّل هَمه‌چیز آبی و روشَن است؛ پَرتوهای خورشید مِثلِ نَوارهای طَلایی دَر آب می‌رَقصَند.",
+     "text": "هدفشون یه چیزه: می‌خوان با چشم خودشون یه ماهی نورانی ببینن.",
+     "say": "هَدَفِشون یه چیزه: می‌خوان با چَشمِ خودِشون یه ماهیِ نورانی بِبینَن.",
+     "visual": {
+      "type": "collage",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "1698530",
+        "url": "https://pixabay.com/get/g29be55dbb1b7390a6e4856e1480670107953fc28c98b2e0008aaca9ca4ea8b9a8800fe521b02dbcca1d24360acfcc50085c92d1e3c983d04d47b35166c2beca3_1280.png",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/vectors/submarine-yellow-sea-ocean-nature-1698530/",
+        "checked": "cartoon yellow submarine with a round window, small fish around"
+       },
+       {
+        "provider": "pixabay",
+        "id": "4202148",
+        "url": "https://pixabay.com/get/g4c2a55ab527c9e22accc2bfc537d1e3bed236cbd937348026c8a6f999a95770e4c0a033327563798f2536957662b4531dc1eaf2c68b69829d9a681d09b7106aa_1280.png",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/vectors/fish-an-angler-cartoon-underwater-4202148/",
+        "checked": "friendly cartoon anglerfish on black, a lure on its head with a small glowing light at the tip",
+        "caption": "هدف!"
+       }
+      ]
+     }
+    },
+    {
+     "text": "اولش همه‌چی آبی و روشنه. نور خورشید مثل نوارای طلایی تو آب می‌رقصه.",
+     "say": "اَوَّلِش همه‌چی آبی و روشَنه. نورِ خورشید مِثلِ نَوارایِ طَلایی تو آب می‌رَقصه.",
      "visual": {
       "type": "stock",
       "clip": {
@@ -145,18 +270,44 @@
      }
     },
     {
-     "text": "میا به عمق‌سنج نگاه می‌کند: پنجاه متر، صد متر، دویست متر.",
-     "say": "میا بِه عُمق‌سَنج نِگاه می‌کُنَد: پَنجاه مِتر، صَد مِتر، دِویست مِتر.",
+     "text": "میا به عمق‌سنج نگاه می‌کنه: پنجاه متر، صد متر، دویست متر...",
+     "say": "میا به عُمق‌سَنج نِگاه می‌کُنه: پَنجاه مِتر، صَد مِتر، دِویست مِتر...",
      "visual": {
-      "type": "stat",
-      "value": "۲۰۰ متر",
-      "label": "عمق‌سنج زیردریایی"
-     },
-     "sfx": "tick"
+      "type": "collage",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "9566138",
+        "url": "https://pixabay.com/get/g2a56854e11ffbb332ef9eac286e6f9207d5bf7b6d204f0e91aecad42f614c3fad8488e1afa1fe2b49c55920b14819f624330de63f75e4fd9e0543cb3873aafd6_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/blue-empty-holiday-light-ocean-9566138/",
+        "checked": "bright shallow water with sunlight patterns",
+        "caption": "۵۰ متر"
+       },
+       {
+        "provider": "pixabay",
+        "id": "4286600",
+        "url": "https://pixabay.com/get/g9c204d39f56c0e8050b0f999e58c93d9d25dce40afc1890938c83fa6817b045f78ee066aea3cdd36eafd9b81774fbaab1be6b13373ce0b7d7e3fbbffb0b39042_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/underwater-sea-wave-sky-seabed-4286600/",
+        "checked": "deeper blue water below the surface",
+        "caption": "۱۰۰ متر"
+       },
+       {
+        "provider": "pixabay",
+        "id": "10393839",
+        "url": "https://pixabay.com/get/gf60d5c8f9356295df2e6822ffe3e82a97e99614503ee826b15bdbec469375609d81cbc51e4d4f5da590cee7be46199efcf771d18407ebe81a7ff5f70c2472285_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/sea-ocean-fish-diving-coral-reef-10393839/",
+        "checked": "darker water, fish silhouettes, light far above",
+        "caption": "۲۰۰ متر"
+       }
+      ]
+     }
     },
     {
-     "text": "رنگ آب کم‌کم تیره‌تر می‌شود؛ اول قرمزها، بعد زردها و سبزها از دید ناپدید می‌شوند.",
-     "say": "رَنگِ آب کَم‌کَم تیره‌تَر می‌شَوَد؛ اَوَّل قِرمِزها، بَعد زَردها و سَبزها اَز دید ناپَدید می‌شَوَند.",
+     "text": "آب کم‌کم تیره می‌شه. اول قرمزا گم می‌شن، بعد زردا و سبزا.",
+     "say": "آب کَم‌کَم تیره می‌شه. اَوَّل قِرمِزا گُم می‌شَن، بَعد زَردا و سَبزا.",
      "visual": {
       "type": "stock",
       "clip": {
@@ -168,31 +319,51 @@
      }
     },
     {
-     "text": "ایمان می‌پرسد: «پس چرا هنوز کمی آبی می‌بینیم؟»",
-     "say": "ایمان می‌پُرسَد: «پَس چِرا هَنوز کَمی آبی می‌بینیم؟»",
+     "text": "ایمان یه سؤال می‌پرسه: «پس چرا هنوز یه کم آبی می‌بینیم؟» جوابش بعدا خیلی به درد می‌خوره!",
+     "say": "ایمان یه سُؤال می‌پُرسه: «پَس چِرا هَنوز یه کَم آبی می‌بینیم؟» جَوابِش بَعداً خِیلی به دَرد می‌خوره!",
      "visual": {
-      "type": "keyword",
-      "text": "چرا هنوز آبی؟",
-      "highlight": "آبی"
+      "type": "image",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "18719",
+        "url": "https://pixabay.com/get/g1eb1ccd39e4ee4f3937e1c12e2897d491e4b0b614add1ed3d57890f23c0d67854a84b97962422ce73931ea063ada1450_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/animal-asia-blue-dark-deep-depth-18719/",
+        "checked": "blue glow coming down into dark water: only blue is left"
+       }
+      ]
      },
-     "sfx": "pop"
+     "rehook": true
     },
     {
-     "text": "کوروش جواب می‌دهد: «چون نور آبی از همه‌ی رنگ‌ها عمیق‌تر در آب پیش می‌رود.»",
-     "say": "کوروش جَواب می‌دَهَد: «چون نورِ آبی اَز هَمه‌ی رَنگ‌ها عَمیق‌تَر دَر آب پیش می‌رَوَد.»",
+     "text": "کوروش می‌گه: «چون نور آبی از همه‌ی رنگا توی آب جلوتر می‌ره.»",
+     "say": "کوروش می‌گه: «چون نورِ آبی از همه‌یِ رَنگا تویِ آب جِلوتَر می‌ره.»",
      "visual": {
-      "type": "short_clip",
-      "short": {
-       "id": "TG-147",
-       "tg_file_id": "BAACAgQAAyEFAAMBBtZd4AADk2sJaGaukrHW2Zh15A2BX1Z03s7HAAK7IwACYE9JULQgE8d7tM27PQQ",
-       "start": 6,
-       "end": 12
-      }
+      "type": "collage",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "2615376",
+        "url": "https://pixabay.com/get/g38f7a8af6acf5873aebac21b2ce54334d6723d69a1795c6d617cdefcb2d7a17a4d8c5e4cd73a9f18eebc0701e13a8cfbb322d50255e3ac0b65b4c04ee46156a7_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/illustrations/underwater-sea-ocean-plankton-blue-2615376/",
+        "checked": "deep blue underwater scene with light rays"
+       },
+       {
+        "provider": "pixabay",
+        "id": "7704801",
+        "url": "https://pixabay.com/get/g7f46e91b562d7a35190046f35585c00266b2f8096a89af4f99a0ec0efda9ccfb60d19a24047a9d6e4fdc3cfb278c223f7a73f812f75b4429147b18b865a5c895_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/jellyfish-sea-jellies-sea-water-7704801/",
+        "checked": "jellyfish in deep blue water"
+       }
+      ]
      }
     },
     {
-     "text": "در هزار متری، زیردریایی به جایی می‌رسد که دیگر هیچ نوری از خورشید نمی‌رسد.",
-     "say": "دَر هِزار مِتری، زیردَریایی بِه جایی می‌رِسَد که دیگَر هیچ نوری اَز خورشید نِمی‌رِسَد.",
+     "text": "توی هزار متری، دیگه هیچ نوری از خورشید نمی‌رسه.",
+     "say": "تویِ هِزار مِتری، دیگه هیچ نوری از خورشید نِمی‌رِسه.",
      "visual": {
       "type": "stock",
       "clip": {
@@ -204,18 +375,69 @@
      }
     },
     {
-     "text": "بچه‌ها چراغ‌های زیردریایی را خاموش می‌کنند و چند ثانیه در سکوت منتظر می‌مانند.",
-     "say": "بَچه‌ها چِراغ‌های زیردَریایی را خاموش می‌کُنَند و چَند ثانیه دَر سُکوت مُنتَظِر می‌مانَند.",
+     "text": "ولی یه مشکل هست: نور تند چراغا خیلی از جونورا رو فراری می‌ده!",
+     "say": "ولی یه مُشکِل هست: نورِ تُندِ چِراغا خِیلی از جونِورا رو فَراری می‌ده!",
      "visual": {
-      "type": "keyword",
-      "text": "سکوت و تاریکی",
-      "highlight": "تاریکی"
+      "type": "image",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "4219524",
+        "url": "https://pixabay.com/get/g41837df6d99b48ebddc1818c14a12f4100d8279d249c0c6dc6fcb0b2dc94fb487d5e7ae5e3fd4986630e5637bc8a63a441808f6c17149672161afd7d0f6f639a_1280.png",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/vectors/dive-scuba-ocean-sea-water-fish-4219524/",
+        "checked": "cartoon red submarine with fish and sea creatures around it"
+       }
+      ]
+     }
+    },
+    {
+     "text": "پس بچه‌ها یه کار عجیب می‌کنن: چراغا رو خاموش می‌کنن و ساکت منتظر می‌مونن.",
+     "say": "پَس بَچه‌ها یه کارِ عَجیب می‌کُنَن: چِراغا رو خاموش می‌کُنَن و ساکِت مُنتَظِر می‌مونَن.",
+     "visual": {
+      "type": "image",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "7105870",
+        "url": "https://pixabay.com/get/gdc7fbd5bd72b903ead5595bb3ae815f740cc5e1916e9f7a3a99697c769c6ab85720af8fc48525dc76a6e7a95883798d8d221b6072a0925f1d22b29becf37187c_1280.png",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/illustrations/submarine-ocean-sea-underwater-7105870/",
+        "checked": "drawing of a white submarine alone in black water, lights off"
+       }
+      ]
+     }
+    },
+    {
+     "text": "یه ثانیه، دو ثانیه، ده ثانیه... هیچی. نکنه اینجا واقعا خالیه؟",
+     "say": "یه ثانیه، دو ثانیه، دَه ثانیه... هیچی. نَکُنه اینجا واقِعاً خالیه؟",
+     "visual": {
+      "type": "collage",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "5596080",
+        "url": "https://pixabay.com/get/gabbec4aebec4ba2d7d00a65c1b08548c6361f82e43306a0d815a25623d036b2f2b6bcc7f8a89c2594cce129cc351bea7ca9d2eaa91a8723f486246a5448d7b19_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/dolphin-fish-sea-deep-sea-5596080/",
+        "checked": "silhouette of a person sitting by a round underwater window, face not visible"
+       },
+       {
+        "provider": "pixabay",
+        "id": "5294270",
+        "url": "https://pixabay.com/get/g24ec8ae6963b446b5a5473ca7b0188303ce9b90d748ac09e4805478200bc3a7c2c8e1d26b3c127e152edbb27c242ad8b0bdafe1f26999141b84783c318300b84_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/ocean-water-sea-waves-seascape-5294270/",
+        "checked": "dark empty water surface"
+       }
+      ]
      },
+     "rehook": true,
      "sfx": "tick"
     },
     {
-     "text": "ناگهان یک نقطه‌ی آبی جلوی پنجره چشمک می‌زند؛ بعد یکی دیگر، و بعد ده‌ها نقطه‌ی دیگر!",
-     "say": "ناگَهان یک نُقطه‌ی آبی جِلوی پَنجره چَشمَک می‌زَنَد؛ بَعد یِکی دیگَر، و بَعد دَه‌ها نُقطه‌ی دیگَر!",
+     "text": "که یهو یه نقطه‌ی آبی جلوی پنجره چشمک می‌زنه. بعد یکی دیگه. بعد ده‌ها تا!",
+     "say": "که یِهو یه نُقطه‌یِ آبی جِلویِ پَنجره چَشمَک می‌زَنه. بَعد یکی دیگه. بَعد دَه‌ها تا!",
      "visual": {
       "type": "stock",
       "clip": {
@@ -230,62 +452,81 @@
    ]
   },
   {
-   "title": "نور خورشید تا کجا می‌رسد؟",
+   "title": "دریا چندطبقه‌ست؟",
    "layer": "fact",
    "beats": [
     {
-     "text": "دانشمندان دریا را از بالا به پایین به چند لایه تقسیم می‌کنند.",
-     "say": "دانِشمَندان دَریا را اَز بالا بِه پایین بِه چَند لایه تَقسیم می‌کُنَند.",
+     "text": "خب، بذار یه لحظه از زیردریایی بیایم بیرون. دانشمندا دریا رو مثل یه ساختمون چندطبقه می‌بینن.",
+     "say": "خب، بِذار یه لَحظه از زیردَریایی بیایم بیرون. دانِشمَندا دَریا رو مِثلِ یه ساختِمونِ چَندطَبَقه می‌بینَن.",
      "visual": {
-      "type": "list",
-      "text": "لایه‌های دریا",
-      "items": [
-       "۰ تا ۲۰۰ متر: لایه‌ی روشن",
-       "۲۰۰ تا ۱۰۰۰ متر: لایه‌ی گرگ‌ومیش",
-       "زیر ۱۰۰۰ متر: لایه‌ی نیمه‌شب"
+      "type": "image",
+      "images": [
+       {
+        "provider": "wikimedia",
+        "id": "Pelagiczone.svg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Pelagiczone.svg/1280px-Pelagiczone.svg.png",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Pelagiczone.svg",
+        "checked": "diagram of ocean layers from sunlit top to dark bottom"
+       }
       ]
-     },
-     "sfx": "whoosh"
-    },
-    {
-     "text": "تا حدود دویست متر، نور خورشید آن‌قدر هست که گیاهان ریز دریایی بتوانند غذا بسازند.",
-     "say": "تا حُدودِ دِویست مِتر، نورِ خورشید آن‌قَدر هَست که گیاهانِ ریزِ دَریایی بِتَوانَند غَذا بِسازَند.",
-     "visual": {
-      "type": "stock",
-      "clip": {
-       "provider": "pixabay",
-       "id": "304019",
-       "url": "https://cdn.pixabay.com/video/2025/09/14/304019_large.mp4",
-       "checked": "the sunlit sea surface with gentle waves: the bright top layer"
-      }
      }
     },
     {
-     "text": "در عمق دویست متری، حتی در آب صاف، کمتر از یک درصد نور خورشید باقی می‌ماند.",
-     "say": "دَر عُمقِ دِویست مِتری، حَتّی دَر آبِ صاف، کَمتَر اَز یک دَرصَدِ نورِ خورشید باقی می‌مانَد.",
+     "text": "طبقه‌ی بالا تا حدود دویست متره. اون‌قدر نور داره که گیاهای ریز دریایی می‌تونن غذا بسازن.",
+     "say": "طَبَقه‌یِ بالا تا حُدودِ دِویست مِتره. اون‌قَدر نور داره که گیاهایِ ریزِ دَریایی می‌تونَن غَذا بِسازَن.",
+     "visual": {
+      "type": "collage",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "9566138",
+        "url": "https://pixabay.com/get/g2a56854e11ffbb332ef9eac286e6f9207d5bf7b6d204f0e91aecad42f614c3fad8488e1afa1fe2b49c55920b14819f624330de63f75e4fd9e0543cb3873aafd6_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/blue-empty-holiday-light-ocean-9566138/",
+        "checked": "sunlit shallow water"
+       },
+       {
+        "provider": "pixabay",
+        "id": "1348508",
+        "url": "https://pixabay.com/get/g33fbc6e79ea01f787cfe6a81c35d51b2c7902e8ba6d920b030d93f1622fb806a561b6bcb9b0bd4591861c6aba7dc47d9cb44b8e93e62c47b31525f6e28b26659_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/phytoplankton-plankton-1348508/",
+        "checked": "microscope photo of tiny green sea algae (diatoms) in a ring",
+        "caption": "گیاه ریز دریایی"
+       }
+      ]
+     }
+    },
+    {
+     "text": "ولی توی دویست متری، حتی تو آب صاف، کمتر از یک درصد نور خورشید می‌مونه.",
+     "say": "ولی تویِ دِویست مِتری، حَتّی تو آبِ صاف، کَمتَر از یک دَرصَدِ نورِ خورشید می‌مونه.",
      "visual": {
       "type": "stat",
-      "value": "کمتر از ۱٪",
-      "label": "نور خورشید در عمق ۲۰۰ متری"
-     },
-     "sfx": "impact"
-    },
-    {
-     "text": "از دویست تا هزار متر، لایه‌ی گرگ‌ومیش است؛ نور خیلی کم است و برای ساختن غذا کافی نیست.",
-     "say": "اَز دِویست تا هِزار مِتر، لایه‌ی گُرگ‌ومیش است؛ نور خِیلی کَم است و بَرای ساختَنِ غَذا کافی نیست.",
-     "visual": {
-      "type": "short_clip",
-      "short": {
-       "id": "TG-147",
-       "tg_file_id": "BAACAgQAAyEFAAMBBtZd4AADk2sJaGaukrHW2Zh15A2BX1Z03s7HAAK7IwACYE9JULQgE8d7tM27PQQ",
-       "start": 12,
-       "end": 18
-      }
+      "value": "۱٪",
+      "label": "کمتر از این مقدار نور خورشید در ۲۰۰ متری"
      }
     },
     {
-     "text": "و پایین‌تر از هزار متر، لایه‌ی نیمه‌شب شروع می‌شود؛ جایی که برای همیشه تاریک است.",
-     "say": "وَ پایین‌تَر اَز هِزار مِتر، لایه‌ی نیمه‌شَب شُروع می‌شَوَد؛ جایی که بَرای هَمیشه تاریک است.",
+     "text": "از دویست تا هزار متر، طبقه‌ی گرگ‌ومیشه. یه کم نور هست، ولی برای غذا ساختن کم میاره.",
+     "say": "از دِویست تا هِزار مِتر، طَبَقه‌یِ گُرگ‌ومیشه. یه کَم نور هست، ولی برایِ غَذا ساختَن کَم میاره.",
+     "visual": {
+      "type": "image",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "10152966",
+        "url": "https://pixabay.com/get/g2ba457fc24dfb92f66a1a1275b6f13cc0bf79fb3853f428eeadcd96fdea82ac24fc1e8de0c81a054ce1be4f317312043ae893a2fed9128c54da1299c03c06bae_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/giant-trevally-large-trevally-10152966/",
+        "checked": "fish in dim grey-blue light above dark water"
+       }
+      ]
+     }
+    },
+    {
+     "text": "پایین‌تر از هزار متر هم طبقه‌ی نیمه‌شبه؛ اونجا همیشه همیشه شبه.",
+     "say": "پایین‌تَر از هِزار مِتر هَم طَبَقه‌یِ نیمه‌شَبه؛ اونجا همیشه همیشه شَبه.",
      "visual": {
       "type": "stock",
       "clip": {
@@ -297,102 +538,184 @@
      }
     },
     {
-     "text": "ولی همین تاریک‌ترین جای زمین، پر از جانورانی است که خودشان چراغ دارند.",
-     "say": "وَلی هَمین تاریک‌تَرین جای زَمین، پُر اَز جانِوَرانی است که خودِشان چِراغ دارَند.",
+     "text": "حالا حدس بزن: تو این دریای تاریک، از هر چهارتا جونور، چندتاشون چراغ دارن؟",
+     "say": "حالا حَدس بِزَن: تو این دَریایِ تاریک، از هَر چهارتا جونِوَر، چَندتاشون چِراغ دارَن؟",
      "visual": {
-      "type": "keyword",
-      "text": "چراغ‌های زنده",
-      "highlight": "زنده"
+      "type": "collage",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "4497496",
+        "url": "https://pixabay.com/get/g6b148347a79c0655d25d5605e62914fa13f41d0f7e3d85f1ef647af2bb5ba7efc27a76e9764c670cefb3123934616f2d135b5cbbeac866368859fb97417e2713_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/jellyfish-medusa-sea-jelly-lilac-4497496/",
+        "checked": "pink glowing jellyfish on dark"
+       },
+       {
+        "provider": "wikimedia",
+        "id": "Luminous Fish of the Deep Sea.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Luminous_Fish_of_the_Deep_Sea.jpg",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Luminous_Fish_of_the_Deep_Sea.jpg",
+        "checked": "old engraving: luminous fishes of the deep sea with light spots"
+       },
+       {
+        "provider": "pixabay",
+        "id": "5275858",
+        "url": "https://pixabay.com/get/g41d4c1dc914ba9fcd9789bcbf68fa49bf90343ad7aee57677bcaf9711589cbf76adbf44c498a766dac5fe536f6738ccb33b7704f3e0469d1466dc1ade12d3555_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/jellyfish-underwater-sea-aquarium-5275858/",
+        "checked": "green-lit moon jellyfish"
+       }
+      ]
+     },
+     "rehook": true,
+     "sfx": "tick"
+    }
+   ]
+  },
+  {
+   "title": "نور زنده چطوری ساخته می‌شه؟",
+   "layer": "fact",
+   "beats": [
+    {
+     "text": "جواب یه پژوهش بزرگ اینه: تقریبا سه‌تاشون! یعنی حدود سه‌چهارم جونورایی که دانشمندا تو اقیانوس دیدن و شمردن، نور می‌سازن.",
+     "say": "جَوابِ یه پِژوهِشِ بُزُرگ اینه: تَقریباً سه‌تاشون! یَعنی حُدودِ سه‌چَهارُمِ جونِورایی که دانِشمَندا تو اُقیانوس دیدَن و شِمُردَن، نور می‌سازَن.",
+     "visual": {
+      "type": "collage",
+      "images": [
+       {
+        "provider": "wikimedia",
+        "id": "Cold-Blooded Vertebrates Part I Plate 16.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Cold-Blooded_Vertebrates_Part_I_Plate_16.jpg/1280px-Cold-Blooded_Vertebrates_Part_I_Plate_16.jpg",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Cold-Blooded_Vertebrates_Part_I_Plate_16.jpg",
+        "checked": "painting 'Luminous fishes by night': lanternfishes with glowing dots",
+        "caption": "۳ از ۴"
+       },
+       {
+        "provider": "wikimedia",
+        "id": "Hatchetfish bioluminescence.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Hatchetfish_bioluminescence.jpg",
+        "license": "CC BY 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Hatchetfish_bioluminescence.jpg",
+        "checked": "hatchetfish glowing blue in the dark",
+        "credit": "HulloThere, CC BY 4.0, via Wikimedia Commons"
+       },
+       {
+        "provider": "pixabay",
+        "id": "2883",
+        "url": "https://pixabay.com/get/g4d4d1fb59c3092e7063d20762b146bc5396538418c79f29af6c05f458ef5562846689f6c1fcd7e8c71fad577a0283650_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/jellyfish-animal-underwater-2883/",
+        "checked": "blue glowing jellyfish"
+       }
+      ]
      },
      "sfx": "pop"
-    }
-   ]
-  },
-  {
-   "title": "نور زنده چطور ساخته می‌شود؟",
-   "layer": "fact",
-   "beats": [
+    },
     {
-     "text": "به نوری که موجود زنده خودش می‌سازد، «زیست‌تابی» می‌گویند.",
-     "say": "بِه نوری که موجودِ زِنده خودَش می‌سازَد، «زیست‌تابی» می‌گویَند.",
+     "text": "به این نور زنده می‌گن «زیست‌تابی».",
+     "say": "به این نورِ زِنده می‌گَن «زیست‌تابی».",
      "visual": {
-      "type": "title",
+      "type": "keyword",
       "text": "زیست‌تابی",
       "highlight": "زیست‌تابی"
-     },
-     "sfx": "reveal"
+     }
     },
     {
-     "text": "دانشمندان در یک پژوهش دیدند حدود سه‌چهارم جانورانی که در آب‌های اقیانوس، از سطح تا عمق چند کیلومتری، ثبت کرده بودند، می‌توانند نور بسازند.",
-     "say": "دانِشمَندان دَر یک پِژوهِش دیدَند حُدودِ سه‌چَهارُمِ جانِوَرانی که دَر آب‌های اُقیانوس، اَز سَطح تا عُمقِ چَند کیلومِتری، ثَبت کَرده بودَند، می‌تَوانَند نور بِسازَند.",
+     "text": "ولی چطوری؟ با یه واکنش شیمیایی. یه ماده به اسم لوسیفرین، با کمک اکسیژن و یه آنزیم به اسم لوسیفراز، می‌درخشه.",
+     "say": "ولی چِطوری؟ با یه واکُنِشِ شیمیایی. یه مادّه به اسمِ لوسیفِرین، با کُمَکِ اُکسیژِن و یه آنزیم به اسمِ لوسیفِراز، می‌دِرَخشه.",
      "visual": {
-      "type": "stat",
-      "value": "۷۶٪",
-      "label": "جانوران ثبت‌شده که نور می‌سازند"
-     },
-     "sfx": "impact"
-    },
-    {
-     "text": "این نور از یک واکنش شیمیایی می‌آید: ماده‌ای به نام لوسیفرین با کمک اکسیژن و آنزیمی به نام لوسیفراز می‌درخشد.",
-     "say": "این نور اَز یک واکُنِشِ شیمیایی می‌آیَد: مادّه‌ای بِه نامِ لوسیفِرین با کُمَکِ اُکسیژِن و آنزیمی بِه نامِ لوسیفِراز می‌دِرَخشَد.",
-     "visual": {
-      "type": "list",
-      "text": "دستور ساخت نور",
-      "items": [
-       "لوسیفرین",
-       "+ اکسیژن",
-       "+ آنزیم لوسیفراز",
-       "= نور زنده"
+      "type": "collage",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "9732826",
+        "url": "https://pixabay.com/get/gf6ec98806d12c6f5e32fc11d399f99b1024678eec7a2b2a3bbd857dff71f1ce05edc693a2256a9c4c473fca8978d6c85bb611afe5b6debc7423e2bc5beb9b53a_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/bioluminescent-beach-blue-nigh-9732826/",
+        "checked": "sea waves glowing bright cyan at night: light from tiny living things"
+       },
+       {
+        "provider": "pixabay",
+        "id": "5275858",
+        "url": "https://pixabay.com/get/g41d4c1dc914ba9fcd9789bcbf68fa49bf90343ad7aee57677bcaf9711589cbf76adbf44c498a766dac5fe536f6738ccb33b7704f3e0469d1466dc1ade12d3555_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/jellyfish-underwater-sea-aquarium-5275858/",
+        "checked": "jellyfish glowing green"
+       }
       ]
      }
     },
     {
-     "text": "این نور «نور سرد» است؛ یعنی گرمای زیادی تولید نمی‌کند، برخلاف لامپ‌های قدیمی که داغ می‌شدند.",
-     "say": "این نور «نورِ سَرد» است؛ یَعنی گَرمای زیادی تولید نِمی‌کُنَد، بَرخِلافِ لامپ‌های قَدیمی که داغ می‌شُدَند.",
+     "text": "جالبیش اینه که این نور سرده؛ یعنی مثل لامپای قدیمی داغ نمی‌شه.",
+     "say": "جالِبیش اینه که این نور سَرده؛ یَعنی مِثلِ لامپایِ قَدیمی داغ نِمی‌شه.",
      "visual": {
-      "type": "compare",
-      "left": "لامپ قدیمی: داغ",
-      "right": "نور زنده: سرد",
-      "verdict": "right"
+      "type": "collage",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "1854093",
+        "url": "https://pixabay.com/get/g96003a6bc19d77a44ecb32dd246e3bd0456ee68d470e27fc2d847a0b6ef3f192ce974af2b0a60b159a4c81965384c0cee59984aa67b9e2d194f92b78a3ea1510_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/light-bulb-lighting-electricity-1854093/",
+        "checked": "old hot glowing incandescent light bulb",
+        "caption": "داغ"
+       },
+       {
+        "provider": "pixabay",
+        "id": "6653502",
+        "url": "https://pixabay.com/get/g1626918a70f693bb06adf9b7e07754f4cdc5056fc6174cef998baa731eb37ac7f23580a31abd1f68c702cba6b4b41b7b5b0eda721b290c001632ab43dbfc7d13_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/jellyfish-underwater-ocean-aquarium-6653502/",
+        "checked": "jellyfish glowing in the cold dark sea",
+        "caption": "سرد"
+       }
+      ]
      }
     },
     {
-     "text": "خیلی از جانوران این ماده‌ها را خودشان می‌سازند، اما بعضی‌ها نورشان را از باکتری‌های نورانی قرض می‌گیرند.",
-     "say": "خِیلی اَز جانِوَران این مادّه‌ها را خودِشان می‌سازَند، اَمّا بَعضی‌ها نورِشان را اَز باکتِری‌های نورانی قَرض می‌گیرَند.",
+     "text": "خیلی از جونورا این مواد رو خودشون می‌سازن، ولی بعضیا نورشونو از باکتری‌های نورانی قرض می‌گیرن.",
+     "say": "خِیلی از جونِورا این مَوادّ رو خودِشون می‌سازَن، ولی بَعضیا نورِشونو از باکتِری‌هایِ نورانی قَرض می‌گیرَن.",
      "visual": {
-      "type": "short_clip",
-      "short": {
-       "id": "TG-147",
-       "tg_file_id": "BAACAgQAAyEFAAMBBtZd4AADk2sJaGaukrHW2Zh15A2BX1Z03s7HAAK7IwACYE9JULQgE8d7tM27PQQ",
-       "start": 18,
-       "end": 24
-      }
+      "type": "image",
+      "images": [
+       {
+        "provider": "wikimedia",
+        "id": "Bioluminescent bacteria - Flickr - Rob Cruickshank.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Bioluminescent_bacteria_-_Flickr_-_Rob_Cruickshank.jpg/1280px-Bioluminescent_bacteria_-_Flickr_-_Rob_Cruickshank.jpg",
+        "license": "CC BY 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Bioluminescent_bacteria_-_Flickr_-_Rob_Cruickshank.jpg",
+        "checked": "petri dish with bacteria glowing bright cyan in the dark",
+        "credit": "Rob Cruickshank, CC BY 2.0, via Wikimedia Commons"
+       }
+      ]
      }
     }
    ]
   },
   {
-   "title": "چهار کار چراغ‌های زنده",
-   "layer": "fact",
+   "title": "چهار ترفند چراغ‌ها",
+   "layer": "story",
    "beats": [
     {
-     "text": "جانوران اعماق با این چراغ‌ها چهار کار مهم انجام می‌دهند: شکار، پنهان شدن، پیدا کردن هم‌نوع و فرار.",
-     "say": "جانِوَرانِ اَعماق با این چِراغ‌ها چَهار کارِ مُهِم اَنجام می‌دَهَند: شِکار، پِنهان شُدَن، پِیدا کَردَنِ هَم‌نوع و فِرار.",
+     "text": "برگردیم تو زیردریایی. حالا بچه‌ها با چشم خودشون می‌بینن این چراغا به چه دردی می‌خورن.",
+     "say": "بَرگَردیم تو زیردَریایی. حالا بَچه‌ها با چَشمِ خودِشون می‌بینَن این چِراغا به چه دَردی می‌خورَن.",
      "visual": {
-      "type": "list",
-      "text": "چهار کار نور",
-      "items": [
-       "شکار",
-       "پنهان شدن",
-       "پیدا کردن هم‌نوع",
-       "فرار"
-      ]
+      "type": "stock",
+      "clip": {
+       "provider": "pixabay",
+       "id": "344520",
+       "url": "https://cdn.pixabay.com/video/2026/04/04/344520_small.mp4",
+       "checked": "several blue-lit jellyfish drifting in dark water outside, seen as from a window"
+      }
      },
      "sfx": "whoosh"
     },
     {
-     "text": "اول، شکار. ماده‌های ماهی ماهیگیر اعماق، یک میله‌ی باریک روی سرشان دارند که نوکش مثل فانوس می‌درخشد.",
-     "say": "اَوَّل، شِکار. مادِه‌های ماهیِ ماهیگیرِ اَعماق، یک میله‌ی باریک روی سَرِشان دارَند که نوکَش مِثلِ فانوس می‌دِرَخشَد.",
+     "text": "ترفند اول: شکار! یه ماهی عجیب جلوی پنجره‌ست، با یه میله روی سرش که نوکش مثل فانوس روشنه.",
+     "say": "تَرفَندِ اَوَّل: شِکار! یه ماهیِ عَجیب جِلویِ پَنجره‌ست، با یه میله رویِ سَرِش که نوکِش مِثلِ فانوس روشَنه.",
      "visual": {
       "type": "image",
       "images": [
@@ -404,55 +727,120 @@
         "page": "https://pixabay.com/vectors/fish-an-angler-cartoon-underwater-4202148/",
         "checked": "friendly cartoon anglerfish on black, a lure on its head with a small glowing light at the tip"
        }
-      ],
-      "labels": [
+      ]
+     }
+    },
+    {
+     "text": "این ماهی ماهیگیر اعماقه. فقط ماده‌هاش این فانوس رو دارن.",
+     "say": "این ماهیِ ماهیگیرِ اَعماقه. فقط مادِه‌هاش این فانوس رو دارَن.",
+     "visual": {
+      "type": "collage",
+      "images": [
        {
-        "text": "فانوس نورانی",
-        "x": 8,
-        "y": 25
+        "provider": "wikimedia",
+        "id": "Melanocetus murrayi.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Melanocetus_murrayi.jpg",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Melanocetus_murrayi.jpg",
+        "checked": "scientific drawing of a deep-sea anglerfish (Melanocetus) with the lure rod on its head"
+       },
+       {
+        "provider": "wikimedia",
+        "id": "Melanocetus murrayi (Murrays abyssal anglerfish).jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Melanocetus_murrayi_%28Murrays_abyssal_anglerfish%29.jpg/1280px-Melanocetus_murrayi_%28Murrays_abyssal_anglerfish%29.jpg",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Melanocetus_murrayi_(Murrays_abyssal_anglerfish).jpg",
+        "checked": "another drawing of the same anglerfish, lure on the head clearly visible"
        }
       ]
      }
     },
     {
-     "text": "این نور را باکتری‌هایی می‌سازند که داخل همان فانوس زندگی می‌کنند.",
-     "say": "این نور را باکتِری‌هایی می‌سازَند که داخِلِ هَمان فانوس زِندگی می‌کُنَند.",
+     "text": "نور فانوسش رو باکتری‌هایی می‌سازن که توی همون فانوس زندگی می‌کنن.",
+     "say": "نورِ فانوسِش رو باکتِری‌هایی می‌سازَن که تویِ همون فانوس زِندِگی می‌کُنَن.",
      "visual": {
-      "type": "keyword",
-      "text": "فانوس پر از باکتری",
-      "highlight": "باکتری"
+      "type": "image",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "4205061",
+        "url": "https://pixabay.com/get/g84ffa650a0ac103a0ba075b3c9d64bb64e96b7d3dd516da079334c2115f4492e7a17553795d45f979024b350b22ca6647636a39fd7aac38aeac87f9757a6360b_1280.png",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/vectors/fish-an-angler-jaw-toothy-funny-4205061/",
+        "checked": "cartoon blue anglerfish with a small lure light hanging in front of its head"
+       }
+      ]
      }
     },
     {
-     "text": "ماهی‌های کوچک کنجکاو به طرف نور می‌آیند و ناگهان در دهان بزرگ شکارچی گم می‌شوند.",
-     "say": "ماهی‌های کوچَکِ کُنجکاو بِه طَرَفِ نور می‌آیَند و ناگَهان دَر دَهانِ بُزُرگِ شِکارچی گُم می‌شَوَند.",
+     "text": "ماهی‌های کوچولوی کنجکاو میان سمت نور و... هاپ! غیب می‌شن.",
+     "say": "ماهی‌هایِ کوچولویِ کُنجکاو میان سَمتِ نور و... هاپ! غِیب می‌شَن.",
      "visual": {
-      "type": "short_clip",
-      "short": {
-       "id": "TG-147",
-       "tg_file_id": "BAACAgQAAyEFAAMBBtZd4AADk2sJaGaukrHW2Zh15A2BX1Z03s7HAAK7IwACYE9JULQgE8d7tM27PQQ",
-       "start": 24,
-       "end": 30
-      }
-     }
+      "type": "collage",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "2418209",
+        "url": "https://pixabay.com/get/g7dd36df61261d1543a378be1cfe85d7122088e9e34f369f0578c5415f48a3ee7e1d00cd797b0637f055ff1359fd9b9874595bdd1c6defea37def50f8e827f5a8_1280.png",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/vectors/ocean-fish-the-seabed-underwater-2418209/",
+        "checked": "cartoon small yellow fish swimming"
+       },
+       {
+        "provider": "pixabay",
+        "id": "4209570",
+        "url": "https://pixabay.com/get/g397aa8dc8b5dc0d0eb153468858d11d3387c9b505c9b662f3f5e9b530caf0279a1df02f5f3f43912fa2b132f35c8ca06b2e70fe3c14bec0d069b9932fd7d0152_1280.png",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/vectors/fish-toothy-jaw-cartoon-kit-blue-4209570/",
+        "checked": "cartoon anglerfish kit, one with mouth wide open (goofy, not scary)"
+       }
+      ]
+     },
+     "sfx": "pop"
     },
     {
-     "text": "دوم، پنهان شدن. در لایه‌ی گرگ‌ومیش، کمی نور از بالا می‌آید و سایه‌ی هر ماهی از پایین دیده می‌شود.",
-     "say": "دُوُّم، پِنهان شُدَن. دَر لایه‌ی گُرگ‌ومیش، کَمی نور اَز بالا می‌آیَد و سایه‌ی هَر ماهی اَز پایین دیده می‌شَوَد.",
+     "text": "ولی صبر کن؛ ترفند دوم حتی زرنگ‌تره!",
+     "say": "ولی صَبر کُن؛ تَرفَندِ دُوُّم حَتّی زِرَنگ‌تَره!",
      "visual": {
       "type": "stock",
       "clip": {
        "provider": "pixabay",
-       "id": "43209",
-       "url": "https://cdn.pixabay.com/video/2020/06/26/43209-434409326_large.mp4",
-       "checked": "faint light coming down from above through blue water",
-       "start": 12
+       "id": "334192",
+       "url": "https://cdn.pixabay.com/video/2026/02/12/334192_small.mp4",
+       "checked": "dark deep water with a lone glowing jellyfish",
+       "start": 4
       }
+     },
+     "rehook": true
+    },
+    {
+     "text": "ترفند دوم: قایم شدن. تو طبقه‌ی گرگ‌ومیش، یه کم نور از بالا میاد و سایه‌ی هر ماهی از پایین معلومه.",
+     "say": "تَرفَندِ دُوُّم: قایِم شُدَن. تو طَبَقه‌یِ گُرگ‌ومیش، یه کَم نور از بالا میاد و سایه‌یِ هَر ماهی از پایین مَعلومه.",
+     "visual": {
+      "type": "collage",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "10393839",
+        "url": "https://pixabay.com/get/gf60d5c8f9356295df2e6822ffe3e82a97e99614503ee826b15bdbec469375609d81cbc51e4d4f5da590cee7be46199efcf771d18407ebe81a7ff5f70c2472285_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/sea-ocean-fish-diving-coral-reef-10393839/",
+        "checked": "fish seen from below as dark silhouettes against light from above"
+       },
+       {
+        "provider": "pixabay",
+        "id": "10393839",
+        "url": "https://pixabay.com/get/gb8cdf1a15e32850e7e36892f50898b8de77d1d636fb82974a1c816158d75c09bc2ddb4f1b5cd2e624131ad4f9f6d25c07259497b16b37dda6dfd8811944b7245_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/sea-ocean-fish-diving-coral-reef-10393839/",
+        "checked": "school of fish dark against the brighter water above"
+       }
+      ]
      }
     },
     {
-     "text": "پس ماهی‌هایی مثل ماهی تبری، زیر شکمشان ردیفی از چراغ دارند که نور ملایمی به پایین می‌تابانند.",
-     "say": "پَس ماهی‌هایی مِثلِ ماهیِ تَبَری، زیرِ شِکَمِشان رَدیفی اَز چِراغ دارَند که نورِ مُلایِمی بِه پایین می‌تابانَند.",
+     "text": "واسه همین ماهی تبری زیر شکمش یه ردیف چراغ داره که نور ملایمی به پایین می‌تابونه.",
+     "say": "واسه همین ماهیِ تَبَری زیرِ شِکَمِش یه رَدیف چِراغ داره که نورِ مُلایِمی به پایین می‌تابونه.",
      "visual": {
       "type": "image",
       "images": [
@@ -461,33 +849,42 @@
         "id": "Hatchetfish bioluminescence.jpg",
         "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Hatchetfish_bioluminescence.jpg",
         "license": "CC BY 4.0",
-        "credit": "HulloThere, CC BY 4.0, via Wikimedia Commons",
         "page": "https://commons.wikimedia.org/wiki/File:Hatchetfish_bioluminescence.jpg",
-        "checked": "hatchetfish in the dark, a row of blue glowing light organs along its belly"
-       }
-      ],
-      "labels": [
-       {
-        "text": "چراغ‌های زیر شکم",
-        "x": 55,
-        "y": 45
+        "checked": "hatchetfish in the dark, a row of blue glowing light organs along its belly",
+        "credit": "HulloThere, CC BY 4.0, via Wikimedia Commons"
        }
       ]
      }
     },
     {
-     "text": "این نور با نور بالای سرشان یکی می‌شود و سایه‌شان کم‌رنگ و محو می‌شود؛ درست مثل یک شنل نامرئی!",
-     "say": "این نور با نورِ بالای سَرِشان یِکی می‌شَوَد و سایه‌شان کَم‌رَنگ و مَحو می‌شَوَد؛ دُرُست مِثلِ یک شِنَلِ نامَرئی!",
+     "text": "نورش با نور بالا یکی می‌شه و سایه‌ش محو می‌شه؛ درست مثل یه شنل نامرئی!",
+     "say": "نورِش با نورِ بالا یکی می‌شه و سایه‌ش مَحو می‌شه؛ دُرُست مِثلِ یه شِنِلِ نامَرئی!",
      "visual": {
-      "type": "keyword",
-      "text": "شنل نامرئی",
-      "highlight": "نامرئی"
-     },
-     "sfx": "pop"
+      "type": "collage",
+      "images": [
+       {
+        "provider": "wikimedia",
+        "id": "Argyropelecus olfersii - fresh specimen.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Argyropelecus_olfersii_-_fresh_specimen.jpg/1280px-Argyropelecus_olfersii_-_fresh_specimen.jpg",
+        "license": "CC BY 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Argyropelecus_olfersii_-_fresh_specimen.jpg",
+        "checked": "silvery hatchetfish specimen, flat body with light organs on the belly",
+        "credit": "HulloThere, CC BY 4.0, via Wikimedia Commons"
+       },
+       {
+        "provider": "wikimedia",
+        "id": "Southern Pacific fishes illustrations by F.E. Clarke 89.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Southern_Pacific_fishes_illustrations_by_F.E._Clarke_89.jpg/1280px-Southern_Pacific_fishes_illustrations_by_F.E._Clarke_89.jpg",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Southern_Pacific_fishes_illustrations_by_F.E._Clarke_89.jpg",
+        "checked": "old drawing of a hatchetfish (Argyropelecus)"
+       }
+      ]
+     }
     },
     {
-     "text": "سوم، پیدا کردن هم‌نوع. ماهی‌های فانوسی روی بدنشان نقطه‌های نورانی با الگوهای مخصوص دارند.",
-     "say": "سِوُّم، پِیدا کَردَنِ هَم‌نوع. ماهی‌های فانوسی روی بَدَنِشان نُقطه‌های نورانی با اُلگوهای مَخصوص دارَند.",
+     "text": "ترفند سوم: پیدا کردن هم‌نوع. ماهی‌های فانوسی رو بدنشون نقطه‌های نورانی با طرح مخصوص دارن.",
+     "say": "تَرفَندِ سِوُّم: پِیدا کَردَنِ هَم‌نوع. ماهی‌هایِ فانوسی رو بَدَنِشون نُقطه‌هایِ نورانی با طَرحِ مَخصوص دارَن.",
      "visual": {
       "type": "image",
       "images": [
@@ -497,60 +894,112 @@
         "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Diaphus_effulgens.jpg",
         "license": "Public domain",
         "page": "https://commons.wikimedia.org/wiki/File:Diaphus_effulgens.jpg",
-        "checked": "old scientific drawing of a lanternfish (Diaphus effulgens) with rows of round light spots along the body"
+        "checked": "old scientific drawing of a lanternfish with rows of round light spots along the body"
        }
       ]
      }
     },
     {
-     "text": "دانشمندان فکر می‌کنند هر گونه الگوی خودش را دارد تا ماهی‌ها در تاریکی هم‌گروه خود را بشناسند.",
-     "say": "دانِشمَندان فِکر می‌کُنَند هَر گونه اُلگوی خودَش را دارَد تا ماهی‌ها دَر تاریکی هَم‌گُروهِ خود را بِشِناسَند.",
+     "text": "دانشمندا فکر می‌کنن هر گونه طرح خودشو داره تا تو تاریکی همدیگه رو بشناسن.",
+     "say": "دانِشمَندا فِکر می‌کُنَن هَر گونه طَرحِ خودِشو داره تا تو تاریکی هَمدیگه رو بِشناسَن.",
      "visual": {
-      "type": "image",
+      "type": "collage",
       "images": [
+       {
+        "provider": "wikimedia",
+        "id": "California headlightfish.png",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/California_headlightfish.png",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:California_headlightfish.png",
+        "checked": "drawing of another lanternfish with a different pattern of light spots"
+       },
        {
         "provider": "wikimedia",
         "id": "Cold-Blooded Vertebrates Part I Plate 16.jpg",
         "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Cold-Blooded_Vertebrates_Part_I_Plate_16.jpg/1280px-Cold-Blooded_Vertebrates_Part_I_Plate_16.jpg",
         "license": "Public domain",
         "page": "https://commons.wikimedia.org/wiki/File:Cold-Blooded_Vertebrates_Part_I_Plate_16.jpg",
-        "checked": "old painting 'Luminous fishes by night': small lanternfishes with glowing dots in black water"
+        "checked": "painting 'Luminous fishes by night': small lanternfishes with glowing dots in black water"
        }
       ]
      }
     },
     {
-     "text": "چهارم، فرار. بعضی میگوهای اعماق وقتی در خطر باشند، یک ابر نورانی به بیرون می‌پاشند.",
-     "say": "چَهارُم، فِرار. بَعضی میگوهای اَعماق وَقتی دَر خَطَر باشَند، یک اَبرِ نورانی بِه بیرون می‌پاشَند.",
+     "text": "ترفند چهارم: فرار. بعضی میگوهای اعماق وقتی تو خطرن، یه ابر نورانی بیرون می‌پاشن.",
+     "say": "تَرفَندِ چَهارُم: فِرار. بَعضی میگوهایِ اَعماق وَقتی تو خَطَرَن، یه اَبرِ نورانی بیرون می‌پاشَن.",
      "visual": {
-      "type": "keyword",
-      "text": "ابر نورانی",
-      "highlight": "ابر"
-     },
-     "sfx": "whoosh"
+      "type": "collage",
+      "images": [
+       {
+        "provider": "wikimedia",
+        "id": "Acanthephyra.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Acanthephyra.jpg",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Acanthephyra.jpg",
+        "checked": "red deep-sea shrimp Acanthephyra"
+       },
+       {
+        "provider": "wikimedia",
+        "id": "Systellaspis debilis (MNHN-IU-2011-2782).jpeg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Systellaspis_debilis_%28MNHN-IU-2011-2782%29.jpeg/1280px-Systellaspis_debilis_%28MNHN-IU-2011-2782%29.jpeg",
+        "license": "CC BY 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Systellaspis_debilis_(MNHN-IU-2011-2782).jpeg",
+        "checked": "red deep-sea shrimp Systellaspis on black",
+        "credit": "Chan T. Y., CC BY 4.0, via Wikimedia Commons"
+       }
+      ]
+     }
     },
     {
-     "text": "شکارچی گیج می‌شود و به ابر درخشان خیره می‌ماند، و میگو در تاریکی آرام دور می‌شود.",
-     "say": "شِکارچی گیج می‌شَوَد و بِه اَبرِ دِرَخشان خیره می‌مانَد، و میگو دَر تاریکی آرام دور می‌شَوَد.",
+     "text": "شکارچی گیج می‌شه و به ابر خیره می‌مونه، میگو هم آروم تو تاریکی جیم می‌شه!",
+     "say": "شِکارچی گیج می‌شه و به اَبر خیره می‌مونه، میگو هَم آروم تو تاریکی جیم می‌شه!",
      "visual": {
-      "type": "short_clip",
-      "short": {
-       "id": "TG-147",
-       "tg_file_id": "BAACAgQAAyEFAAMBBtZd4AADk2sJaGaukrHW2Zh15A2BX1Z03s7HAAK7IwACYE9JULQgE8d7tM27PQQ",
-       "start": 30,
-       "end": 36
+      "type": "stock",
+      "clip": {
+       "provider": "pixabay",
+       "id": "247497",
+       "url": "https://cdn.pixabay.com/video/2024/12/18/247497_large.mp4",
+       "checked": "many small glowing dots drifting in dark water like a glowing cloud",
+       "start": 10
       }
      }
     }
    ]
   },
   {
-   "title": "چرا بیشتر نورها آبی است؟",
+   "title": "چراغ‌قوه‌ی مخفی",
    "layer": "fact",
    "beats": [
     {
-     "text": "اگر دقت کنی، بیشتر چراغ‌های اعماق دریا آبی یا سبزآبی هستند.",
-     "say": "اَگَر دِقَّت کُنی، بیشتَرِ چِراغ‌های اَعماقِ دَریا آبی یا سَبزآبی هَستَند.",
+     "text": "حالا وقتشه معمای اول ویدیو رو حل کنیم. یادته ایمان پرسید چرا هنوز آبی می‌دیدن؟",
+     "say": "حالا وَقتِشه مُعَمّایِ اَوَّلِ ویدیو رو حَل کُنیم. یادِته ایمان پُرسید چِرا هَنوز آبی می‌دیدَن؟",
+     "visual": {
+      "type": "collage",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "21438",
+        "url": "https://pixabay.com/get/g4b6aeb82ec30345f718ccd8a452c2a47fe8ccb09aab2852a73a8c8c46c8dc8c65a0768a69fbfed01759188bcfdc087dd_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/jellyfish-sea-jellies-animals-21438/",
+        "checked": "big blue glowing jellyfish"
+       },
+       {
+        "provider": "pixabay",
+        "id": "7704801",
+        "url": "https://pixabay.com/get/g7f46e91b562d7a35190046f35585c00266b2f8096a89af4f99a0ec0efda9ccfb60d19a24047a9d6e4fdc3cfb278c223f7a73f812f75b4429147b18b865a5c895_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/jellyfish-sea-jellies-sea-water-7704801/",
+        "checked": "jellyfish in deep blue water"
+       }
+      ]
+     },
+     "rehook": true,
+     "sfx": "riser"
+    },
+    {
+     "text": "بیشتر چراغای اعماق آبی یا سبزآبی‌ان، چون نور آبی تو آب از همه دورتر می‌ره.",
+     "say": "بیشتَرِ چِراغایِ اَعماق آبی یا سَبزآبی‌اَن، چون نورِ آبی تو آب از همه دورتَر می‌ره.",
      "visual": {
       "type": "stock",
       "clip": {
@@ -558,50 +1007,79 @@
        "id": "190901",
        "url": "https://cdn.pixabay.com/video/2023/11/26/190901-888554449_small.mp4",
        "checked": "a jellyfish glowing in blue-green light in the dark",
-       "start": 12
+       "start": 6
       }
      }
     },
     {
-     "text": "دلیلش همان چیزی است که ایمان در زیردریایی پرسید: نور آبی در آب دورتر از همه می‌رود.",
-     "say": "دَلیلَش هَمان چیزی است که ایمان دَر زیردَریایی پُرسید: نورِ آبی دَر آب دورتَر اَز هَمه می‌رَوَد.",
+     "text": "تازه، چشم بیشتر جونورای اعماق اصلا رنگ قرمز رو نمی‌بینه.",
+     "say": "تازه، چَشمِ بیشتَرِ جونِورایِ اَعماق اَصلاً رَنگِ قِرمِز رو نِمی‌بینه.",
      "visual": {
-      "type": "compare",
-      "left": "نور قرمز: زود گم می‌شود",
-      "right": "نور آبی: دور می‌رود",
-      "verdict": "right"
+      "type": "collage",
+      "images": [
+       {
+        "provider": "wikimedia",
+        "id": "Polyipnus kiwiensis kiwi hatchetfish spirit specimen NORFANZ expedition collection 1.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Polyipnus_kiwiensis_kiwi_hatchetfish_spirit_specimen_NORFANZ_expedition_collection_1.jpg/1280px-Polyipnus_kiwiensis_kiwi_hatchetfish_spirit_specimen_NORFANZ_expedition_collection_1.jpg",
+        "license": "CC BY 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Polyipnus_kiwiensis_kiwi_hatchetfish_spirit_specimen_NORFANZ_expedition_collection_1.jpg",
+        "checked": "close-up of a deep-sea hatchetfish with a big eye",
+        "credit": "Photographer: Benjamin HealleySource: Museums Victoria, CC BY 4.0, via Wikimedia Commons"
+       },
+       {
+        "provider": "wikimedia",
+        "id": "Lanternfish larva.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Lanternfish_larva.jpg",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Lanternfish_larva.jpg",
+        "checked": "lanternfish with a big shining eye"
+       }
+      ]
      }
     },
     {
-     "text": "تازه، چشم بیشتر جانوران اعماق نمی‌تواند رنگ قرمز را ببیند.",
-     "say": "تازه، چَشمِ بیشتَرِ جانِوَرانِ اَعماق نِمی‌تَوانَد رَنگِ قِرمِز را بِبینَد.",
+     "text": "و اینجاست که ماهی مرموز ما وارد می‌شه: یه جور ماهی اژدها که غیر از نور آبی، نور قرمز هم می‌سازه!",
+     "say": "و اینجاست که ماهیِ مَرموزِ ما وارِد می‌شه: یه جور ماهیِ اِژدَها که غِیر از نورِ آبی، نورِ قِرمِز هَم می‌سازه!",
      "visual": {
-      "type": "keyword",
-      "text": "قرمز برایشان نامرئی است",
-      "highlight": "قرمز"
-     }
-    },
-    {
-     "text": "اینجا یک ماهی زرنگ وارد بازی می‌شود: نوعی ماهی اژدها که علاوه بر نور آبی، نور قرمز هم می‌سازد.",
-     "say": "اینجا یک ماهیِ زِرَنگ وارِدِ بازی می‌شَوَد: نوعی ماهیِ اِژدَها که عِلاوه بَر نورِ آبی، نورِ قِرمِز هَم می‌سازَد.",
-     "visual": {
-      "type": "title",
-      "text": "ماهی اژدها",
-      "highlight": "اژدها"
+      "type": "image",
+      "images": [
+       {
+        "provider": "wikimedia",
+        "id": "Malacosteus niger1.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Malacosteus_niger1.jpg/1280px-Malacosteus_niger1.jpg",
+        "license": "Public domain",
+        "page": "https://commons.wikimedia.org/wiki/File:Malacosteus_niger1.jpg",
+        "checked": "painting of the black dragonfish Malacosteus with a red light organ under its eye"
+       }
+      ]
      },
      "sfx": "reveal"
     },
     {
-     "text": "او با این نور قرمز، مثل یک چراغ‌قوه‌ی مخفی، اطرافش را می‌بیند، بی‌آنکه دیگران متوجه شوند.",
-     "say": "او با این نورِ قِرمِز، مِثلِ یک چِراغ‌قُوه‌ی مَخفی، اَطرافَش را می‌بینَد، بی‌آنکه دیگَران مُتَوَجِّه شَوَند.",
+     "text": "با این نور قرمز، مثل یه چراغ‌قوه‌ی مخفی دور و برشو می‌بینه، بدون اینکه بقیه بفهمن!",
+     "say": "با این نورِ قِرمِز، مِثلِ یه چِراغ‌قوه‌یِ مَخفی دور و بَرِشو می‌بینه، بِدونِ اینکه بَقیه بِفَهمَن!",
      "visual": {
-      "type": "short_clip",
-      "short": {
-       "id": "TG-147",
-       "tg_file_id": "BAACAgQAAyEFAAMBBtZd4AADk2sJaGaukrHW2Zh15A2BX1Z03s7HAAK7IwACYE9JULQgE8d7tM27PQQ",
-       "start": 36,
-       "end": 42
-      }
+      "type": "collage",
+      "images": [
+       {
+        "provider": "wikimedia",
+        "id": "Malacosteus niger (black).jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Malacosteus_niger_%28black%29.jpg",
+        "license": "CC BY 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Malacosteus_niger_(black).jpg",
+        "checked": "photo of Malacosteus niger, black fish with a red light organ under the eye",
+        "credit": "Rafael Bañón, CC BY 3.0, via Wikimedia Commons"
+       },
+       {
+        "provider": "pixabay",
+        "id": "924099",
+        "url": "https://pixabay.com/get/gefe706970379f3ec7c49e99ed5830e81fc9d0cc93080f6c9e3064e4c34f4b7367b2805f9d5baab045ba6d577878b6ee8acf69dd50ae3a906b62660b1fe202942_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/flashlight-dark-tunnel-underground-924099/",
+        "checked": "person with a flashlight in a dark tunnel",
+        "caption": "چراغ‌قوه‌ی مخفی"
+       }
+      ]
      }
     }
    ]
@@ -611,32 +1089,75 @@
    "layer": "game",
    "beats": [
     {
-     "text": "حالا نوبت توست! یک جانور خشکی هم با همین روش نور می‌سازد و شب‌های تابستان در باغ‌ها چشمک می‌زند.",
-     "say": "حالا نُوبَتِ توست! یک جانِوَرِ خُشکی هَم با هَمین روش نور می‌سازَد و شَب‌های تابِستان دَر باغ‌ها چَشمَک می‌زَنَد.",
+     "text": "حالا نوبت توئه! یه حشره‌ی خشکی هم با همین روش نور می‌سازه و شبای تابستون تو باغا چشمک می‌زنه.",
+     "say": "حالا نوبَتِ توئه! یه حَشَره‌یِ خُشکی هَم با همین رَوِش نور می‌سازه و شَبایِ تابِستون تو باغا چَشمَک می‌زَنه.",
      "visual": {
-      "type": "title",
-      "text": "معمای امروز",
-      "highlight": "معما"
-     },
-     "sfx": "pop"
+      "type": "collage",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "5414243",
+        "url": "https://pixabay.com/get/g4f1f117541bfe95ac8792dc8c94d43796ae7b003e55f60bd2bfa51501b456caad727696a76a9a9679e87cbba1bb7d85b2b9e9d803917c5838b583c6b0945e381_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/rabbits-butterflies-bunnies-moon-5414243/",
+        "checked": "illustration of a moonlit summer night meadow with small lights"
+       },
+       {
+        "provider": "pixabay",
+        "id": "1576865",
+        "url": "https://pixabay.com/get/ga4d4c56b27c19717738563088840ff451da33c8cef0482e2975c1b04b27cc0af3dbccc20d2a7797bd9dd10f991ac9f7d0d312e468c94de1df01cc3eba18648f2_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/fantasy-moon-night-jungle-dark-1576865/",
+        "checked": "dark forest at night with many tiny yellow lights"
+       }
+      ]
+     }
     },
     {
-     "text": "حدس می‌زنی کیست؟ چند ثانیه فکر کن.",
-     "say": "حَدس می‌زَنی کیست؟ چَند ثانیه فِکر کُن.",
+     "text": "حدس می‌زنی کیه؟ چند ثانیه فکر کن...",
+     "say": "حَدس می‌زَنی کیه؟ چَند ثانیه فِکر کُن...",
      "visual": {
       "type": "keyword",
       "text": "حدس بزن!",
       "highlight": "حدس"
      },
+     "rehook": true,
      "sfx": "tick"
     },
     {
-     "text": "جواب: کرم شب‌تاب! که در واقع کرم نیست، بلکه نوعی سوسک کوچک است.",
-     "say": "جَواب: کِرمِ شَب‌تاب! که دَر واقِع کِرم نیست، بَلکه نوعی سوسکِ کوچَک است.",
+     "text": "جواب: کرم شب‌تاب! که در واقع اصلا کرم نیست؛ یه جور سوسک کوچولوئه.",
+     "say": "جَواب: کِرمِ شَب‌تاب! که دَر واقِع اَصلاً کِرم نیست؛ یه جور سوسکِ کوچولوئه.",
      "visual": {
-      "type": "keyword",
-      "text": "کرم شب‌تاب",
-      "highlight": "شب‌تاب"
+      "type": "collage",
+      "images": [
+       {
+        "provider": "wikimedia",
+        "id": "Lampyris Noctiluca Female Firefly 1.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Lampyris_Noctiluca_Female_Firefly_1.jpg/1280px-Lampyris_Noctiluca_Female_Firefly_1.jpg",
+        "license": "CC0",
+        "page": "https://commons.wikimedia.org/wiki/File:Lampyris_Noctiluca_Female_Firefly_1.jpg",
+        "checked": "female firefly glowing bright green in the dark grass"
+       },
+       {
+        "provider": "wikimedia",
+        "id": "Lampyridae (firefly).jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Lampyridae_%28firefly%29.jpg/1280px-Lampyridae_%28firefly%29.jpg",
+        "license": "CC BY 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Lampyridae_(firefly).jpg",
+        "checked": "orange-black firefly beetle on a green leaf",
+        "credit": "Sumanth699, CC BY 4.0, via Wikimedia Commons",
+        "caption": "سوسک!"
+       },
+       {
+        "provider": "wikimedia",
+        "id": "Fireflies I.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Fireflies_I.jpg",
+        "license": "CC BY 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Fireflies_I.jpg",
+        "checked": "forest floor full of glowing fireflies at night",
+        "credit": "xenmate, CC BY 2.0, via Wikimedia Commons"
+       }
+      ]
      },
      "sfx": "reveal"
     }
@@ -647,52 +1168,71 @@
    "layer": "summary",
    "beats": [
     {
-     "text": "خب، بیا سه نکته‌ی امروز را مرور کنیم.",
-     "say": "خُب، بیا سه نُکته‌ی اِمروز را مُرور کُنیم.",
+     "text": "خب، بیا سه تا نکته‌ی امروزو مرور کنیم.",
+     "say": "خب، بیا سه تا نُکته‌یِ امروزو مُرور کُنیم.",
      "visual": {
-      "type": "title",
-      "text": "سه نکته",
-      "highlight": "نکته"
-     },
-     "sfx": "whoosh"
+      "type": "image",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "1299982",
+        "url": "https://pixabay.com/get/gd0caa0778049d7d24997d7948fa6ce3aa285fcb8835440d5173990abf959cdb8467f58d6a3bf5c555dd59d5c65392b08e7013e581c7aebf7bc2372fe422e5d28_1280.png",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/vectors/alphabet-word-images-amarillo-blue-1299982/",
+        "checked": "cartoon blue and yellow submarine with round windows"
+       }
+      ]
+     }
     },
     {
-     "text": "یک: پایین‌تر از هزار متر، نور خورشید نمی‌رسد و دریا همیشه تاریک است.",
-     "say": "یک: پایین‌تَر اَز هِزار مِتر، نورِ خورشید نِمی‌رِسَد و دَریا هَمیشه تاریک است.",
+     "text": "یک: پایین‌تر از هزار متر، نور خورشید نمی‌رسه و دریا همیشه تاریکه.",
+     "say": "یِک: پایین‌تَر از هِزار مِتر، نورِ خورشید نِمی‌رِسه و دَریا همیشه تاریکه.",
      "visual": {
       "type": "stock",
       "clip": {
        "provider": "pixabay",
-       "id": "334192",
-       "url": "https://cdn.pixabay.com/video/2026/02/12/334192_small.mp4",
-       "checked": "dark deep water with a lone glowing jellyfish: the always-dark deep sea",
-       "start": 4
+       "id": "384401",
+       "url": "https://cdn.pixabay.com/video/2026/10/22/384401_large.mp4",
+       "checked": "submersible with headlights in the dark deep sea",
+       "start": 3
       }
      }
     },
     {
-     "text": "دو: جانوران با یک واکنش شیمیایی، نوری سرد و زنده می‌سازند که به آن زیست‌تابی می‌گویند.",
-     "say": "دو: جانِوَران با یک واکُنِشِ شیمیایی، نوری سَرد و زِنده می‌سازَند که بِه آن زیست‌تابی می‌گویَند.",
+     "text": "دو: جونورا با یه واکنش شیمیایی نور سرد و زنده می‌سازن؛ اسمش زیست‌تابیه.",
+     "say": "دو: جونِورا با یه واکُنِشِ شیمیایی نورِ سَرد و زِنده می‌سازَن؛ اسمِش زیست‌تابیه.",
      "visual": {
-      "type": "short_clip",
-      "short": {
-       "id": "TG-147",
-       "tg_file_id": "BAACAgQAAyEFAAMBBtZd4AADk2sJaGaukrHW2Zh15A2BX1Z03s7HAAK7IwACYE9JULQgE8d7tM27PQQ",
-       "start": 42,
-       "end": 48
-      }
+      "type": "collage",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "4076713",
+        "url": "https://pixabay.com/get/g401fec3314797f9008d462114b9d76f770654f4f50cd4c317e37e9e9e1aef2bf591b14f38fd7b1ccebdd3ac51d9650d0b7563ec78d150547560906ff2f45c60f_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/medusa-aquarium-jellyfish-marine-4076713/",
+        "checked": "moon jellyfish glowing in dark water"
+       },
+       {
+        "provider": "pixabay",
+        "id": "3332522",
+        "url": "https://pixabay.com/get/g9959b18636b16b118499e7679c44187f79d987e629de2dced60a0e80593d402cf54a25b788d112d0bf55fb0f831a6336822f9630f989d7fc183c4aab24a1824f_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/body-of-water-panoramic-landscape-3332522/",
+        "checked": "beach at night with glowing blue waves"
+       }
+      ]
      }
     },
     {
-     "text": "سه: این چراغ‌ها برای شکار، پنهان شدن، پیدا کردن هم‌نوع و فرار به کار می‌روند.",
-     "say": "سه: این چِراغ‌ها بَرای شِکار، پِنهان شُدَن، پِیدا کَردَنِ هَم‌نوع و فِرار بِه کار می‌رَوَند.",
+     "text": "سه: این چراغا به درد شکار، قایم شدن، پیدا کردن هم‌نوع و فرار می‌خورن.",
+     "say": "سه: این چِراغا به دَردِ شِکار، قایِم شُدَن، پِیدا کَردَنِ هَم‌نوع و فِرار می‌خورَن.",
      "visual": {
       "type": "list",
-      "text": "سه نکته",
       "items": [
-       "زیر ۱۰۰۰ متر همیشه تاریک است",
-       "زیست‌تابی: نور سرد و زنده",
-       "شکار، پنهان شدن، هم‌نوع، فرار"
+       "شکار",
+       "قایم شدن",
+       "پیدا کردن هم‌نوع",
+       "فرار"
       ]
      }
     }
@@ -703,28 +1243,42 @@
    "layer": "cta",
    "beats": [
     {
-     "text": "اپ کومندی به‌زودی می‌آید تا با کوروش، میا و ایمان به ماجراهای بیشتری سفر کنی.",
-     "say": "اَپ کومَندی بِه‌زودی می‌آیَد تا با کوروش، میا و ایمان بِه ماجَراهای بیشتَری سَفَر کُنی.",
+     "text": "اپ کومندی به‌زودی میاد تا با کوروش، میا و ایمان به ماجراهای بیشتری سفر کنی.",
+     "say": "اَپ کومَندی به‌زودی میاد تا با کوروش، میا و ایمان به ماجَراهایِ بیشتَری سَفَر کُنی.",
      "visual": {
       "type": "title",
-      "text": "یاد بگیر • کشف کن • رقابت کن",
-      "highlight": "کشف کن"
-     },
-     "sfx": "whoosh"
+      "text": "اپ کومندی به‌زودی!",
+      "highlight": "کومندی"
+     }
     },
     {
-     "text": "اگر این سفر به اعماق دریا را دوست داشتی، کانال را سابسکرایب کن.",
-     "say": "اَگَر این سَفَر بِه اَعماقِ دَریا را دوست داشتی، کانال را سابسکرایب کُن.",
+     "text": "اگه این سفر به اعماق دریا رو دوست داشتی، کانالو سابسکرایب کن.",
+     "say": "اگه این سَفَر به اَعماقِ دَریا رو دوست داشتی، کانالو سابسکرایب کُن.",
      "visual": {
-      "type": "keyword",
-      "text": "سابسکرایب کن",
-      "highlight": "سابسکرایب"
-     },
-     "sfx": "pop"
+      "type": "collage",
+      "images": [
+       {
+        "provider": "pixabay",
+        "id": "4219524",
+        "url": "https://pixabay.com/get/g41837df6d99b48ebddc1818c14a12f4100d8279d249c0c6dc6fcb0b2dc94fb487d5e7ae5e3fd4986630e5637bc8a63a441808f6c17149672161afd7d0f6f639a_1280.png",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/vectors/dive-scuba-ocean-sea-water-fish-4219524/",
+        "checked": "cartoon red submarine under the sea"
+       },
+       {
+        "provider": "pixabay",
+        "id": "6222849",
+        "url": "https://pixabay.com/get/g6115a80ffba839d0da5ffa4524e6f6500726c6129ff4c33a87330fcc911b145da8427e3ed851e4be516dc346483ff07740a25138a7215a2d0033e0176d3a47dd_1280.jpg",
+        "license": "Pixabay Content License",
+        "page": "https://pixabay.com/photos/jellyfish-tentacles-animal-6222849/",
+        "checked": "glowing jellyfish"
+       }
+      ]
+     }
     },
     {
-     "text": "و در کامنت‌ها بنویس: اگر می‌توانستی یک چراغ زنده داشته باشی، با آن چه کار می‌کردی؟",
-     "say": "وَ دَر کامِنت‌ها بِنِویس: اَگَر می‌تَوانِستی یک چِراغِ زِنده داشته باشی، با آن چه کار می‌کَردی؟",
+     "text": "و تو کامنتا بنویس: اگه یه چراغ زنده داشتی، باهاش چی‌کار می‌کردی؟",
+     "say": "و تو کامِنتا بِنِویس: اگه یه چِراغِ زِنده داشتی، باهاش چی‌کار می‌کَردی؟",
      "visual": {
       "type": "stock",
       "clip": {
@@ -739,35 +1293,18 @@
    ]
   }
  ],
- "pronunciation_checked": [
-  "کِرم = worm (کرم شب‌تاب), not کَرَم",
-  "مادّه = substance vs مادِه = female (anglerfish females)",
-  "پُر = full, not پَر (feather)",
-  "دَر = in, not دُر (pearl)",
-  "گُم = lost",
-  "دُوُّم / سِوُّم / چَهارُم = ordinals",
-  "سَر (head) in سَرِشان, not سِر",
-  "روشَن (bright)",
-  "زِنده (alive)",
-  "قِرمِز (red)",
-  "شِکَم (belly)",
-  "خُشکی (land), not خِشکی",
-  "مَحو / نامَرئی",
-  "اِژدَها (dragonfish)",
-  "لوسیفِرین / لوسیفِراز (foreign terms)",
-  "ezafe kasra marked: نورِ خورشید، اَعماقِ دَریا، تاریکیِ مُطلَق، ماهیِ تَبَری، ماهیِ ماهیگیرِ اَعماق، کِرمِ شَب‌تاب، عُمقِ دِویست مِتری، اَبرِ نورانی"
- ],
  "critic": {
   "passed": true,
-  "score": 8.5,
+  "score": 8.6,
   "notes": [
-   "HARD 1: facts checked against NOAA (light <1% at 200 m, no sunlight below 1000 m, blue light travels farthest), Smithsonian (anglerfish lure with bacteria, counter-illumination, lanternfish patterns, red-light dragonfish), Martini & Haddock 2017 (76% of observed animals bioluminescent). Firefly = beetle, luciferin/luciferase. OK",
-   "HARD 2: kid-safe; cartoon anglerfish is goofy not scary; prey 'disappears into the mouth' kept mild. OK",
-   "HARD 3-5: say re-read word by word; every say = text + marks (generated by stripping marks); homographs کرم/ماده/پر/در marked; ordinals marked; ezafe kasra on consonant-final words. OK",
-   "HARD 6: all stock clips looked at on contact sheets; TG-147 clips with tg_file_id from plan. OK",
-   "HARD 7-8: 742 words, 9 scenes, hook-story-fact-game-summary-cta; new title. OK",
-   "SOFT: strong hook, submarine adventure with the three characters, good visual mix; minus: stock is mostly jellyfish (no stock anglerfish), estimated length ~5.6 min near the lower end."
+   "HARD 1: facts unchanged from the researched version and re-checked: NOAA (<1% light at 200 m, no sunlight below 1000 m, blue travels farthest), Smithsonian (female anglerfish lure with symbiotic bacteria, hatchetfish counter-illumination, lanternfish species-specific photophores, shrimp spewing luminous cloud, red-light dragonfish Malacosteus), Martini & Haddock 2017 (~76% of observed animals bioluminescent = 'about 3 of 4'). Firefly = beetle. Story claim 'strong lights scare many animals' is mild and true (researchers use red light). OK",
+   "HARD 2: kid-safe; anglerfish shown as goofy cartoons and old drawings; 'هاپ! غیب می‌شن' instead of eating details. OK",
+   "HARD 3-5: read every say aloud word by word (round 1 found 'نور چراغای زیردریایی' too absolute -> softened to 'خیلی از جونورا'); homographs کرم/ماده/مواد/پر/در/درد/سر/شب/سرد/ده/روش marked; ordinals and ezafe marked; text = say minus marks (generated). OK",
+   "HARD 6: no short_clip; 37/57 beats image/collage, 25 collage, 6 text cards (10.5%); all pictures picked from contact sheets; wrong-species vent shrimp (Rimicaris) rejected for the luminous-cloud beat, replaced by Acanthephyra/Systellaspis; stock clips checked on sheets. OK",
+   "HARD 7-8: 775 words, 9 scenes hook-story-fact-fact-story-fact-game-summary-cta; new title. OK",
+   "HARD 9: spoken Tehrani throughout (می‌دونستی، فکرشو بکن، بذار، واسه همین، جیم می‌شه); no bookish forms. OK",
+   "HARD 10: open loop (secret-flashlight fish) at ~0:25, paid off in scene 6 (red-light dragonfish); second loop (Iman's blue question) paid off too; rehooks at words 65/155/214/318/464/588/676 (max gap 146). OK",
+   "SOFT: strong hook and real adventure (goal: see a glowing fish; obstacle: lights scare animals; surprise: dots appear in the dark; payoff). Minus: several jellyfish pictures/clips (no free photos of live deep-sea fish glowing), some species pictures are old drawings or specimens; ~5.9 min estimated."
   ]
- },
- "not_before": "2026-11-28T08:10:00Z"
+ }
 }

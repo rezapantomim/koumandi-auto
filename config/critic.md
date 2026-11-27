@@ -11,14 +11,17 @@ Any HARD item failing → `passed: false` regardless of score.
    diacritics of the meant reading; ezafe kasra where the voice could miss it; names via config/lexicon_fa.json;
    `pronunciation_checked` lists the marked homographs. One missed homograph = fail.
 5. `say` = `text` + diacritics only (same words); `text` has no diacritics.
-6. Every `stock` beat has a `clip` whose `checked` note confirms it shows what the sentence says; every `short_clip` has a
-   `tg_file_id` from the plan.
+6. Every `stock` beat has a `clip` whose `checked` note confirms it shows what the sentence says. No `short_clip` at all.
+   ≥ 50% of beats image/collage, ≥ 33% collage, text cards ≤ 15%.
 7. Length within limits (config/channel.json); structure hook → story → fact → summary → cta.
 8. No repeated title/hook (data/history.json, archive/).
+9. Tone: read it aloud — it must sound like a friendly YouTuber talking (محاوره‌ی خودمونی), not a book. Any bookish sentence
+   (می‌باشد، گردید، نمودن، لذا، …) = fail.
+10. Hooks: open loop in the first 10 s that is paid off later; a `rehook` beat at least every ~200 words.
 
 ## SOFT (affect score)
-- Hook strength in the first 15 s; the story feels like an adventure with کوروش، میا و ایمان.
-- Visual variety: a change every 3–6 s, own Shorts used where they fit.
+- Hook strength in the first 10 s; the story feels like a real adventure (goal, obstacle, surprise, payoff) with کوروش، میا و ایمان.
+- Visual variety: a change every 3–6 s; collages that really tell the moment.
 - Title curiosity without clickbait; clear takeaway a kid can retell.
 
 ## Output

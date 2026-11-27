@@ -171,7 +171,11 @@
          "type": "string",
          "minLength": 2,
          "maxLength": 260,
-         "description": "narration (Turkish), one idea"
+         "description": "narration (Persian), one idea"
+        },
+        "rehook": {
+         "type": "boolean",
+         "description": "long videos: this beat re-hooks the viewer (teaser, twist, question) - at least every ~200 words"
         },
         "say": {
          "type": "string",

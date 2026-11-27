@@ -53,6 +53,24 @@ def check(path):
             errs.append('long video needs >= 2 sources')
         if not ep.get('pronunciation_checked'):
             errs.append('pronunciation_checked missing: list the homographs you diacritized in `say` (or [] if none)')
+        # owner rules 2026-11-27: no own Shorts inside long videos, many collages, few text cards, re-hooks
+        types = [b['visual']['type'] for b in beats]
+        if 'short_clip' in types:
+            errs.append('long video must not use our own Shorts (short_clip)')
+        nb = len(types)
+        pics = sum(t in ('image', 'collage') for t in types); col = types.count('collage')
+        cards = sum(t in ('title', 'keyword', 'list', 'stat', 'compare', 'quote') for t in types)
+        if pics < 0.5 * nb:
+            errs.append(f'only {pics}/{nb} beats are image/collage (need >= 50%)')
+        if col < nb / 3:
+            errs.append(f'only {col}/{nb} beats are collage (need >= 1/3)')
+        if cards > 0.15 * nb:
+            errs.append(f'{cards}/{nb} beats are text cards (max 15%)')
+        gap = 0
+        for b in beats:
+            gap = 0 if b.get('rehook') else gap + words(b['text'])
+            if gap > 220:
+                errs.append('more than ~220 words without a `rehook` beat (re-hook at least every 60-90 s)'); break
     for i, b in enumerate(beats):
         if re.search('[ً-ْ]', b['text']):
             errs.append(f'beat {i}: diacritics belong in `say`, not in the on-screen `text`')

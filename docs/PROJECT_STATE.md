@@ -36,7 +36,6 @@
   (gemini-3.5-flash), model chain 3.8-flash-tts -> 3.1-flash-tts-preview -> 3.8-flash-lite-tts on quota or SAFETY
   (3.1-preview falsely blocked a harmless chunk). YouTube API quota resets 08:00 UTC; daily cap 5 uploads, longs before Shorts.
 - First long L-20261128-deep-sea-lights (not_before 08:10Z) -> built by the 12:43Z run on 28 Nov, publish 19:00. Local preview OK (6:08).
-- Known: own-Short clips carry their burned-in captions under ours (double text).
 
 ## Next
 - Long videos: queue empty. Register the writer (`scripts/install-schedule.ps1`) and do a first writer run; first slot 2026-11-28 19:00 Tehran.
@@ -47,3 +46,6 @@
 - Telegram Bot API downloads only files ≤ 20 MB.
 - tools/stock_search.py, image_search.py and Diagrams.tsx still carry rezfitlab defaults (Turkish diagram labels) — diagrams
   are not in the KOUMANDI visual list; stock/image tools are language-neutral.
+- 2026-11-27 owner rules for long videos: no own Shorts (short_clip banned), >=50% image/collage, >=1/3 collage, text cards <=15%,
+  conversational Tehrani tone, `rehook` beat every <=220 words, diacritics on special words. Enforced in tools/validate.py.
+  L-20261128 rewritten under these rules (775 words, 57 beats, critic 8.6).
