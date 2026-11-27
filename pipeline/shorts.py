@@ -56,71 +56,81 @@ def _owner_ok(chat):
     return bool(own) and chat.get('type') == 'private' and str(chat.get('id')) == own
 
 
+def _has_words(t):
+    return any(ch.isalnum() for ch in (t or ''))       # "👍", "✅" ... are not captions
+
+
+def _video_of(p):
+    d = p.get('document') or {}
+    return p.get('video') or (d if d.get('mime_type', '').startswith('video/') else None)
+
+
 def poll():
-    """Read new channel posts (and videos the owner forwards to the bot) into the inbox. Returns number of new videos."""
+    """Read the inbox channel (and the owner's private chat with the bot) into data/shorts_inbox.json.
+
+    One Short = one video + its cover photo + its caption text, sent next to each other in ANY order (the video's own caption
+    and Telegram's own video cover count too). A part of a type the open group already has starts the next group; a group
+    is closed once it has all three. Emoji-only texts and the labels ویدیو/کاور/کپشن are ignored.
+    A video whose group is not complete waits (status "wait") up to WAIT_HOURS for the missing parts.
+    Returns the number of new videos."""
     tok = _tok()
     if not tok or not (os.environ.get('TELEGRAM_SOURCE_CHAT') or os.environ.get('TELEGRAM_CHAT_ID')):
         print('shorts: TELEGRAM_BOT_TOKEN / TELEGRAM_SOURCE_CHAT not set -> skip'); return 0
     st = load(STATE, {'offset': 0}); inbox = load(INBOX, {'items': []})
-    known = {(i['chat'], i['msg']) for i in inbox['items']}
     r = requests.get(f'{API}/bot{tok}/getUpdates', params={'offset': st['offset'], 'timeout': 0,
                      'allowed_updates': '["channel_post","edited_channel_post","message"]'}, timeout=30).json()
     if not r.get('ok'):
         raise RuntimeError(f'telegram getUpdates: {r}')
-    photos, new = {}, 0
     by_key = {(i['chat'], i['msg']): i for i in inbox['items']}
+    groups = st.setdefault('open', {})                  # chat id -> open group {"video": key|None, "cover": id, "caption": text}
+    new = 0
     for u in r['result']:
         st['offset'] = u['update_id'] + 1
+        edited = 'edited_channel_post' in u
         p = u.get('channel_post') or u.get('edited_channel_post') or u.get('message')
         if not p or not (_src_ok(p['chat']) or _owner_ok(p['chat'])):
             continue
-        if _owner_ok(p['chat']) and not (p.get('video') or (p.get('document') or {}).get('mime_type', '').startswith('video/')):
-            # owner chat, sequence "video -> cover photo -> caption text": attach to the last owner video
-            last = by_key.get(tuple(st.get('owner_last') or ()))
-            if last is None or last['status'] not in ('wait', 'new'):
-                continue
-            if p.get('photo'):
-                last['cover'] = p['photo'][-1]['file_id']
-                txt = _unlabel(p.get('caption') or '')
-                if txt:
-                    last['caption'] = txt
-            elif p.get('text') and _unlabel(p['text']):
-                last['caption'] = _unlabel(p['text']); last['status'] = _status(last['caption'])
+        chat = str(p['chat']['id']); key = (p['chat']['id'], p['message_id'])
+        v = _video_of(p)
+        if edited:                                      # edited caption of a known video
+            if v and key in by_key and by_key[key]['status'] in ('wait', 'new'):
+                by_key[key]['caption'] = _unlabel(p.get('caption') or '') or by_key[key]['caption']
             continue
-        if p.get('photo'):                               # possible cover: same album or reply to a video
-            best = p['photo'][-1]['file_id']
-            if p.get('media_group_id'):
-                photos[p['media_group_id']] = best
-            if p.get('reply_to_message'):
-                photos[('reply', p['reply_to_message']['message_id'])] = best
-        v = p.get('video') or (p.get('document') if (p.get('document') or {}).get('mime_type', '').startswith('video/') else None)
-        if not v:
+        parts = {}
+        if v:
+            parts['video'] = v
+            vc = (v.get('cover') or [None])[-1]
+            if vc:
+                parts['cover'] = vc['file_id']
+        if p.get('photo'):
+            parts['cover'] = p['photo'][-1]['file_id']
+        txt = _unlabel(p.get('caption') or p.get('text') or '')
+        if _has_words(txt) and not txt.startswith('/'):
+            parts['caption'] = txt
+        if not parts:
             continue
-        key = (p['chat']['id'], p['message_id'])
-        cap = _unlabel(p.get('caption') or '')
-        owner = _owner_ok(p['chat'])
-        if key in known:                                 # edited caption -> update
-            for i in inbox['items']:
-                if (i['chat'], i['msg']) == key and i['status'] == 'new':
-                    i['caption'] = cap
-            continue
-        orig = p.get('forward_origin') or {}
-        date = orig.get('date') or p.get('forward_date') or p['date']      # forwarded backlog keeps the original order
-        vcover = (v.get('cover') or [None])[-1]                              # Telegram's own video cover, if set
-        inbox['items'].append({'chat': p['chat']['id'], 'msg': p['message_id'], 'date': date, 'got': p['date'], 'file_id': v['file_id'],
-                               'size': v.get('file_size', 0), 'width': v.get('width'), 'height': v.get('height'),
-                               'seconds': v.get('duration'), 'caption': cap, 'group': p.get('media_group_id'),
-                               'cover': vcover['file_id'] if vcover else None,
-                               # owner-chat videos wait for their caption message (or WAIT_HOURS); channel posts are complete
-                               'status': 'wait' if owner and not cap else _status(cap), 'owner': owner})
-        by_key[key] = inbox['items'][-1]
-        if owner:
-            st['owner_last'] = list(key)
-        known.add(key); new += 1
-    for i in inbox['items']:                             # attach covers found in this batch
-        c = photos.get(i.get('group')) or photos.get(('reply', i['msg']))
-        if c and not i.get('cover'):
-            i['cover'] = c
+        g = groups.get(chat)
+        # a part the open group already has -> this message belongs to the next Short
+        # (a video's built-in Telegram cover never forces a new group: a separate cover photo may already be there)
+        clash = [k for k in parts if not (k == 'cover' and 'video' in parts and not p.get('photo'))]
+        if g and any(g.get(k) for k in clash):
+            g = None
+        if g is None:
+            g = groups[chat] = {'video': None, 'cover': None, 'caption': None}
+        if 'video' in parts:
+            orig = p.get('forward_origin') or {}
+            item = {'chat': p['chat']['id'], 'msg': p['message_id'], 'date': orig.get('date') or p.get('forward_date') or p['date'],
+                    'got': p['date'], 'file_id': v['file_id'], 'size': v.get('file_size', 0), 'width': v.get('width'),
+                    'height': v.get('height'), 'seconds': v.get('duration'), 'caption': '', 'cover': None, 'status': 'wait'}
+            inbox['items'].append(item); by_key[key] = item; g['video'] = list(key); new += 1
+        for k in ('cover', 'caption'):
+            if k in parts and not g.get(k):
+                g[k] = parts[k]
+        if g['video']:                                  # copy what the group has onto its video
+            item = by_key[tuple(g['video'])]
+            item['cover'] = g['cover'] or item['cover']; item['caption'] = g['caption'] or item['caption']
+            if g['cover'] and g['caption']:
+                item['status'] = _status(item['caption']); groups.pop(chat, None)
     save(INBOX, inbox); save(STATE, st)
     return new
 
