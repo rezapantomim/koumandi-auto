@@ -180,12 +180,12 @@ def short_slots(hist, now=None):
     h, m = map(int, sc['short_time_local'].split(':'))
     taken = {e.get('slot') for e in hist['episodes'] if e.get('kind') == 'short'}
     out = []
-    for d in range(int(sc.get('short_days_ahead', 2)) + 1):
+    for d in range(int(sc.get('short_days_ahead', 2))):          # today .. today + short_days_ahead - 1, never further
         day = (now.astimezone(tz) + dt.timedelta(days=d)).date()
         at = dt.datetime.combine(day, dt.time(h, m), tzinfo=tz).astimezone(dt.timezone.utc)
         if at > now + dt.timedelta(minutes=20) and day.isoformat() not in taken:
             out.append((day.isoformat(), at))
-    return out[:int(sc.get('short_days_ahead', 2))]
+    return out
 
 
 def publish_due(yt, hist, left, dry=False):

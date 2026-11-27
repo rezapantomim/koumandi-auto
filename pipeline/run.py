@@ -154,15 +154,6 @@ def main():
         post_pending_comments(yt, hist); save(HIST, hist)
     done_ids = {e['id'] for e in hist['episodes']}
     report = []
-    if not a.file and not a.id:                          # Telegram -> Shorts
-        try:
-            n = shorts.poll()
-            if n:
-                report.append(f'📥 {n} ویدیوی جدید از تلگرام')
-            sr = shorts.publish_due(yt, hist, left, dry=a.dry_run)
-            left -= sum(1 for x in sr if x.startswith('✅')); report += sr; save(HIST, hist)
-        except Exception as e:
-            traceback.print_exc(); report.append(f'❌ shorts: {str(e)[:400]}')
     for f, ep in due(a.id, a.file):
         if ep['id'] in done_ids:
             continue
@@ -209,6 +200,15 @@ def main():
             save(bank, items)
         left -= 1
         report.append(f'✅ {ep["id"]} -> https://youtu.be/{vid} (انتشار {ep["publish_at"]})')
+    if not a.file and not a.id:                          # Telegram -> Shorts (after long videos: they get the quota first)
+        try:
+            n = shorts.poll()
+            if n:
+                report.append(f'📥 {n} ویدیوی جدید از تلگرام')
+            sr = shorts.publish_due(yt, hist, left, dry=a.dry_run)
+            left -= sum(1 for x in sr if x.startswith('✅')); report += sr; save(HIST, hist)
+        except Exception as e:
+            traceback.print_exc(); report.append(f'❌ shorts: {str(e)[:400]}')
     q = len(list((ROOT / 'queue').glob('*.json')))
     if q < 3 and not a.dry_run:
         report.append(f'⚠️ queue has only {q} episodes left - the weekly writer must run')
