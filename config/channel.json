@@ -1,0 +1,110 @@
+{
+  "channel": {
+    "name": "KOUMANDI",
+    "handle": "@koumandiapp",
+    "language": "fa",
+    "region": "IR",
+    "category_id": "27",
+    "made_for_kids": false,
+    "playlists": {
+      "long": "کومندی — ویدیوهای کامل",
+      "short": "کومندی — شورت‌ها"
+    },
+    "links": {
+      "instagram": "https://www.instagram.com/koumandi.app"
+    },
+    "default_hashtags": [
+      "#کومندی",
+      "#koumandi",
+      "#بازی_آموزشی"
+    ]
+  },
+  "schedule": {
+    "timezone": "Asia/Tehran",
+    "long_every_days": 2,
+    "long_first_date": "2026-11-28",
+    "long_time_local": "19:00",
+    "short_time_local": "17:00",
+    "short_max_per_day": 2,
+    "plan_days_ahead": 7,
+    "build_ahead_hours": 40,
+    "max_uploads_per_day": 4,
+    "paused": false
+  },
+  "long_video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "min_seconds": 300,
+    "target_seconds": 420,
+    "max_seconds": 540,
+    "words_min": 650,
+    "words_max": 950
+  },
+  "short": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "min_seconds": 5,
+    "max_seconds": 180
+  },
+  "voice": {
+    "engine": "gemini",
+    "edge": {
+      "voice": "fa-IR-FaridNeural",
+      "rate": "+0%",
+      "pitch": "+0Hz"
+    },
+    "alternatives": [
+      "fa-IR-FaridNeural",
+      "fa-IR-DilaraNeural"
+    ],
+    "lexicon": "config/lexicon_fa.json",
+    "words_per_second_target": 2.2,
+    "elevenlabs": {
+      "voice_id": null,
+      "voice_name": null,
+      "model": "eleven_v3",
+      "reserve_chars": 1500,
+      "_note": "Not used for now (owner has no ElevenLabs budget for long videos)."
+    },
+    "_edge_note": "edge-tts kept only for tools/voice_sample.py tests; the owner rejected its pronunciation.",
+    "gemini": {
+      "model": "gemini-3.8-flash-tts",
+      "voice": "Puck",
+      "style": "Read the following Persian (Farsi) text aloud in standard Tehrani Persian, as a warm, clear and lively storyteller for children. The text carries diacritics (fatha, kasra, damma) on ambiguous words: they are authoritative - pronounce those words exactly as marked.",
+      "check_model": "gemini-3.5-flash",
+      "check_fallback_models": [
+        "gemini-3.8-flash",
+        "gemini-2.5-flash"
+      ],
+      "check_block_beats": 12,
+      "retries": 2,
+      "_note": "Owner picked Puck (2026-11-27). Gemini guesses homographs wrong without diacritics (read عِلم as عَلَم); with diacritics OK. Every episode is listened back by check_model; beats with wrong words are re-voiced, still wrong -> not published."
+    }
+  },
+  "audio": {
+    "target_lufs": -14,
+    "music_gain_db": -22,
+    "duck_db": -10,
+    "sfx_gain_db": -12
+  },
+  "style": {
+    "theme": "koumandi-adventure",
+    "bg": "#10162B",
+    "panel": "#1C2545",
+    "text": "#F7F4EA",
+    "accent": "#FFB020",
+    "accent2": "#3FD0C9",
+    "good": "#2BD67B",
+    "bad": "#FF4D5E",
+    "font_head": "Vazirmatn",
+    "font_body": "Vazirmatn",
+    "rtl": true
+  },
+  "disclaimer": "",
+  "ai_disclosure": true,
+  "notify": {
+    "telegram": true
+  }
+}

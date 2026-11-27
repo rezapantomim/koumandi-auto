@@ -1,0 +1,92 @@
+name: Publish
+
+on:
+  schedule:
+    - cron: '17 4 * * *'     # ~07:47 Tehran: long videos due in the next 40 h + new Telegram Shorts (off the full hour on purpose)
+    - cron: '43 12 * * *'    # ~16:13 Tehran: second pass (Telegram keeps channel posts for the bot only 24 h)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Build only, do not upload (video appears as a downloadable artifact)'
+        type: boolean
+        default: true
+      id:
+        description: 'Optional: one episode id from queue/ (built even if not due yet)'
+        required: false
+      file:
+        description: 'Optional: build this one file only, never uploads (e.g. tests/S-20261204-protein-30g.json)'
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with: { python-version: '3.12', cache: 'pip' }
+
+      - uses: actions/setup-node@v5
+        with: { node-version: '22', cache: 'npm', cache-dependency-path: render/package-lock.json }
+
+      - name: System packages
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg libnss3 libdbus-1-3 libatk1.0-0 libgbm-dev libxrandr2 libxkbcommon-dev \
+            libxfixes3 libxcomposite1 libxdamage1 libatk-bridge2.0-0 libpango-1.0-0 libcairo2 libcups2 || true
+          sudo apt-get install -y -qq libasound2t64 || sudo apt-get install -y -qq libasound2 || true
+
+      - name: Python packages
+        run: pip install -r requirements.txt
+
+      - name: Render packages
+        working-directory: render
+        run: npm ci && npx remotion browser ensure
+
+      - name: Build and publish
+        env:
+          YT_TOKEN_JSON: ${{ secrets.YT_TOKEN_JSON }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_SOURCE_CHAT: ${{ secrets.TELEGRAM_SOURCE_CHAT }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          ARGS=""
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="--dry-run"; fi
+          if [ -n "${{ inputs.id }}" ]; then ARGS="$ARGS --id ${{ inputs.id }}"; fi
+          if [ -n "${{ inputs.file }}" ]; then ARGS="--file ${{ inputs.file }}"; fi
+          if [ -z "$ARGS" ] && [ -z "$YT_TOKEN_JSON" ]; then echo "::notice::YouTube is not connected yet (secret YT_TOKEN_JSON missing) -> nothing to do"; exit 0; fi
+          python -m pipeline.run $ARGS
+
+      - name: Preview files (dry runs)
+        if: always() && github.event_name == 'workflow_dispatch' && inputs.dry_run
+        uses: actions/upload-artifact@v5
+        with:
+          name: preview-${{ github.run_number }}
+          path: |
+            work/*/final.mp4
+            work/*/thumb.jpg
+            work/*/upload.json
+          retention-days: 7
+
+      - name: Save state (history, archive, queue)
+        if: always() && !(github.event_name == 'workflow_dispatch' && inputs.dry_run)
+        run: |
+          git config user.name "koumandi-bot"
+          git config user.email "koumandi-bot@users.noreply.github.com"
+          # add path by path: one missing path (e.g. no failed/ yet) makes a combined `git add` add nothing
+          for p in data/history.json data/topics.json data/shorts_inbox.json data/telegram_state.json queue archive failed; do
+            [ -e "$p" ] && git add -A -- "$p"
+          done
+          git diff --cached --quiet && { echo "nothing to save"; exit 0; }
+          git commit -m "publish: $(date -u +%F) [skip ci]"
+          for i in 1 2 3; do git pull --rebase -q origin "${GITHUB_REF_NAME}" && git push && break; sleep 5; done

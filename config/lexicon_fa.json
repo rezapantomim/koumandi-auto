@@ -1,0 +1,16 @@
+{
+ "_note": "Fixed pronunciations for the Persian voice. Key = word as written on screen, value = how the voice must read it (diacritics / phonetic spelling). Applied on whole words before TTS. Words whose reading depends on context (کرم، علم، مهر، کشتی، گل، ...) are NOT listed here: the writer diacritizes them in each beat's `say` field.",
+ "words": {
+  "کومندی": "کومَندی",
+  "Koumandi": "کومَندی",
+  "KOUMANDI": "کومَندی",
+  "کوروش": "کوروش",
+  "میا": "میا",
+  "ایمان": "ایمان",
+  "اپ": "اَپ",
+  "اپلیکیشن": "اَپلیکِیشِن",
+  "سابسکرایب": "سابسکرایب",
+  "یوتیوب": "یوتیوب",
+  "اینستاگرام": "اینستاگرام"
+ }
+}

@@ -1,0 +1,16 @@
+# secrets
+.env
+client_secret*.json
+token*.json
+
+# local working files
+work/
+render/node_modules/
+render/public/clips/
+render/public/img/
+render/public/coach/
+render/out/
+__pycache__/
+*.pyc
+
+KOUMANDI-launch-plan.md
